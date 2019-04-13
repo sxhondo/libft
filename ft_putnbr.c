@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 18:15:46 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/13 20:57:42 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/13 20:06:57 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/13 20:07:08 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+int		ft_putchar(char c);
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	ft_putnbr(int nb)
 {
-	size_t	i;
+	char	c[11];
+	int		l;
 
-	i = 0;
-	while (i < len && src[i])
+	l = 0;
+	if (nb == 0)
+		ft_putchar('0');
+	if (nb < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar('-');
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (l <= 11 && nb != 0)
+	{
+		if (nb % 10 < 0)
+			c[l] = ((nb % 10) * -1) + '0';
+		else
+			c[l] = (nb % 10) + '0';
+		nb = nb / 10;
+		l++;
+	}
+	while (l >= 0)
+	{
+		ft_putchar(c[l]);
+		l--;
+	}
 }

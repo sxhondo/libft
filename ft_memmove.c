@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   memmove.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 18:15:46 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/13 20:57:42 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/13 19:12:13 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/13 20:10:10 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
+	char	*csrc;
+	char	*cdest;
+	char	tmp[len];
 
+	csrc = (char *)src;
+	cdest = (char *)dst;
 	i = 0;
-	while (i < len && src[i])
+	while (i < len)
 	{
-		dest[i] = src[i];
+		tmp[i] = csrc[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	i = 0;
+	while (i < len)
+	{
+		cdest[i] = tmp[i];
+		i++;
+	}
+	return (cdest);
 }

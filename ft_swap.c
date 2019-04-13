@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
+/*   By: sxhondo <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 18:15:46 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/13 20:57:42 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/01/31 17:59:21 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/02/01 20:53:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-char	*ft_strncpy(char *dest, const char *src, size_t len)
+void	ft_swap(int *a, int *b)
 {
-	size_t	i;
+	int		temp;
 
-	i = 0;
-	while (i < len && src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

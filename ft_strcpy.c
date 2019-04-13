@@ -6,16 +6,18 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 16:51:04 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/11 18:19:24 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/13 20:54:37 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <string.h>
+
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
