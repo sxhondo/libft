@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 21:21:26 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 17:05:43 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/15 15:51:34 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/15 16:49:51 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+int		ft_isalpha(int c)
 {
-	char	*str;
-
-	str = (char *)b;
-	
-	if (!str == NULL)
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	else 
 		return (0);
-	while (len > 0)
-	{
-		str[len] = c;
-		len--;			
-	}
-	return (b);
 }
 
 int		main()
 {
-	char	*str = "hello";
-
-	printf("%s", ft_memset(str, '_', 12));	
+	printf("%d", ft_isalpha('a'));		
 	return (0);
 }

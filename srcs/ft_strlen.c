@@ -6,12 +6,13 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 16:51:41 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/14 20:16:10 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/15 15:07:52 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <stdio.h>
 
 size_t		ft_strlen(const char *str)
 {
@@ -22,3 +23,13 @@ size_t		ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+int main()
+{
+    char    *str = "hello";
+
+    printf("%zu", ft_strlen(str));
+    return (0);
+}
+
+

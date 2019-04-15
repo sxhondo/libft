@@ -6,14 +6,16 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 21:19:28 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/14 21:21:22 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/15 17:07:49 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-
-
+	if (s == NULL)
+		return (0);
+	ft_memset(s, 0, n);
 }
