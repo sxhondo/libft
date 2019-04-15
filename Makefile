@@ -5,37 +5,46 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/14 19:49:42 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/15 20:07:48 by sxhondo          ###   ########.fr        #
+#    Created: 2019/04/15 21:21:07 by sxhondo           #+#    #+#              #
+#    Updated: 2019/04/15 21:21:10 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME=libft.a
 
-SRCS = ./srcs/*.c
+SRCS=ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
+     ft_isprint.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
+     ft_memmove.c \
+     ft_memset.c ft_putchar.c ft_putnbr.c \
+     ft_strcat.c ft_strchr.c ft_strcmp.c \
+     ft_strcpy.c ft_strdup.c ft_strlen.c ft_strncat.c ft_strncmp.c \
+     ft_strncpy.c ft_strnstr.c ft_strrchr.c ft_strstr.c \
+     ft_swap.c ft_tolower.c ft_toupper.c
 
-OBJECTS = *.o
+OBJECTS=ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
+             ft_isdigit.o ft_isprint.o ft_memccpy.o ft_memchr.o ft_memcmp.o \
+             ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar.o ft_putnbr.o \
+             ft_strcat.o ft_strchr.o ft_strcmp.o ft_strcpy.o ft_strdup.o \
+             ft_strlen.o ft_strncat.o ft_strncmp.o \
+             ft_strncpy.o ft_strnstr.o ft_strrchr.o \
+             ft_strstr.o ft_swap.o ft_tolower.o ft_toupper.o
 
-HEADER = ./includes/libft.h
+INCLUDES=./
 
-FLAG = -Wall -Wextra -Werror
+all: $(NAME)
 
-all : $(NAME)
-		
-$(NAME):
-	@echo "Linking..."
-	gcc $(FLAG) -c $(SRCS)
-	@echo "Creating a library..."
-	ar rc $(NAME) $(OBJECTS)
+$(NAME): $(SRCS) libft.h
+	@echo "Making object files..."
+	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	@echo "Making library..."
+	@ar rc $(NAME) $(OBJECTS)
 	@echo "Indexing library..."
 	@ranlib $(NAME)
-	
+
 clean:
-	@echo "Deleting .o's"
-	@rm -rf $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	@echo "Deleting library..."
-	@rm -rf $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

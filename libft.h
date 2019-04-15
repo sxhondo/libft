@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
 #include <string.h>
 #include <unistd.h>
@@ -51,4 +51,4 @@ int		ft_tolower(int c);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 
-#endif
+# endif
