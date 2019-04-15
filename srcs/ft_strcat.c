@@ -6,39 +6,29 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 21:32:23 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/14 21:38:53 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/15 18:58:18 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <string.h>
-#include <stdio.h>
+#include "../libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *dst, const char *src)
 {
-	size_t 	i;
-	size_t	n;
+    size_t i;
+    size_t j;
 
-	n = 0;
-	i = 0;
-	while (s1[i])
-		i++;
-	
-	ft_strlen(s1[i])
-	while (s2[n])
-	{
-		s1[i] = s2[n];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
-}
+    i = ft_strlen(dst);
+    j = 0;
 
-int		main()
-{
-	char	*str_small = "hello";
-	char	str_big[100] = "world";
-
-	ft_strcat(str_big, str_small);
-//	printf("%s", ft_strcat(str_big, str_small));
+    if (dst == NULL || src == NULL)
+        return (0);
+    while (src[j])
+    {
+        dst[i] = src[j];
+        j++;
+        i++;
+    }
+    dst[i] = '\0';
+    return (dst);
 }

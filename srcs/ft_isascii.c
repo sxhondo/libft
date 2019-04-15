@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../libft.h"
 
 int		ft_isascii(int c)
 {
@@ -18,10 +18,4 @@ int		ft_isascii(int c)
 		return (1);
 	else
 		return (0);
-}
-
-int		main()
-{
-	printf("%d", ft_isascii('#'));
-	return (0);	
 }

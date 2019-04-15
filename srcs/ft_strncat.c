@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 19:54:39 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/14 20:11:13 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/15 19:10:48 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/15 19:26:21 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-
 #include <string.h>
+#include "../libft.h"
 
-size_t	ft_strlen(const char *str);
+char	*ft_strncat(char *dst, const char *src, size_t n)
+{
+    size_t i;
+    size_t j;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+    i = ft_strlen(dst);
+	j = 0;
+    if (dst == NULL || src == NULL)
+        return (0);
+    while (j <= n && src[j])
+    {
+        dst[i] = src[j];
+        j++;
+        i++;
+    }
+    dst[i] = '\0';
+    return (dst);
+}

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../libft.h"
 
 int		ft_tolower(int c)
 {
@@ -20,10 +20,4 @@ int		ft_tolower(int c)
 		return (c);
 	else
 		return (0);
-}
-
-int		main()
-{
-	printf("%c", ft_tolower('#'));
-	return (0);
 }

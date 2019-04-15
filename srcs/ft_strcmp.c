@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
-#include <string.h>
+#include "../libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
@@ -25,13 +24,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
-}
-
-int		main()
-{
-	char	*a = "";
-	char	*z = "a";
-	printf("%d", ft_strcmp(a, z));
 	return (0);
 }

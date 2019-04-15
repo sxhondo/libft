@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
 #include <string.h>
+#include "../libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -33,10 +32,4 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		h++;
 	}
 	return (NULL);
-}
-
-int		main()
-{
-	printf("%s", ft_strnstr("hello", "lo", 3));
-	return (0);
 }

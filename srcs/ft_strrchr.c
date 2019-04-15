@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
 #include <string.h>
+#include "../libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -30,12 +29,4 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}	
 	return (NULL);
-}
-
-int		main()
-{
-	const char	*str = "everything";	
-
-	printf("%s", ft_strrchr(str, 'e'));
-	return (0);
 }

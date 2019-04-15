@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
+#include "../libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -24,13 +24,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
-}
-
-int		main()
-{
-	char	*a = "aaaaA";
-	char	*z = "aaaaZ";
-	printf("%d", ft_strncmp(a, z, 5));
 	return (0);
 }

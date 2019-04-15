@@ -6,17 +6,17 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:05:14 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 15:50:18 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/15 17:33:30 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
 #include <string.h>
-#include <stdio.h>
 
 int		ft_atoi(const char *str)
 {
 	size_t	i;
-	int		nb;
+	long int		nb;
 	int		sign;
 
 	sign = 1;
@@ -38,10 +38,4 @@ int		ft_atoi(const char *str)
         i++;
 	}
 	return (nb * sign);
-}
-
-int     main()
-{
-    printf("%d", ft_atoi("                        +1"));
-    return (0);
 }
