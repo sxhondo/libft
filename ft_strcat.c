@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:19:50 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 22:24:09 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/16 19:34:56 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ char	*ft_strcat(char *dst, const char *src)
 
     i = ft_strlen(dst);
     j = 0;
-
-    if (dst == NULL || src == NULL)
-        return (0);
     while (src[j])
     {
         dst[i] = src[j];

@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 22:20:29 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/16 19:19:05 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/16 19:51:29 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/16 20:18:27 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stdio.h>
 #include <string.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+    size_t i;
+    size_t j;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+    i = ft_strlen(dst);
+    j = 0;
+
+    while (src[j] && j < size)
+    {
+        dst[i] = src[j];
+        j++;
+        i++;
+    }
+    dst[i] = '\0';
+    if (i > size)
+
+    return (i);
 }
+/*
+int     main()
+{
+    char    out[100];
+
+    ft_strcpy(out, "first");
+    ft_strlcat(out, "second", 6);
+    printf("%s", out);
+} */
 

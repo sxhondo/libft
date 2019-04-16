@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:20:10 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 22:24:09 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/16 20:39:48 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	i = 0;
-	if (c == 0 && s[i] == '\0')
-		return ((char *)s + i);
+	if (c == 0)
+		return ((char *)s + ft_strlen(s));
 	while (s[i])
 	{
 		if (s[i] == c)
