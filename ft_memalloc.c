@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 22:20:29 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/17 16:57:42 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/17 17:07:04 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/17 22:21:34 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+void	*ft_memalloc(size_t size)
 {
-	size_t	i;
+	void	*p;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	p = malloc(size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, size);
+	return (p);
 }

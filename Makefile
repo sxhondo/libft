@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/16 14:38:44 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/04/17 21:51:05 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,19 @@ SRCS=ft_atoi.c \
      ft_swap.c \
      ft_tolower.c \
      ft_toupper.c \
+     ft_memalloc.c \
+     ft_strnew.c \
+     ft_memdel.c \
+     ft_strdel.c \
+     ft_strclr.c \
+     ft_striter.c \
+     ft_striteri.c \
+     ft_strmap.c    \
+     ft_strmapi.c \
+     ft_strequ.c    \
+     ft_strsub.c    \
+     ft_strjoin.c \
+     ft_putstr.c \
 
 OBJECTS=ft_atoi.o \
         ft_bzero.o \
@@ -73,6 +86,19 @@ OBJECTS=ft_atoi.o \
         ft_swap.o \
         ft_tolower.o \
         ft_toupper.o \
+        ft_memalloc.o \
+        ft_strnew.o \
+        ft_memdel.o \
+        ft_strdel.o \
+        ft_strclr.o \
+        ft_striter.o \
+        ft_striteri.o \
+        ft_strmap.o \
+        ft_strmapi.o \
+        ft_strequ.o \
+        ft_strsub.o \
+        ft_strjoin.o \
+        ft_putstr.o \
 
 INCLUDES=./
 

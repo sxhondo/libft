@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/16 19:53:54 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/17 21:51:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,21 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-/*      PART II - My functions      */
+/*      PART II */
+void    *ft_memalloc(size_t size);
+void    ft_memdel(void **ap);
+char    *ft_strnew(size_t size);
+void    ft_strdel(char **as);
+void    ft_strclr(char *s);
+void    ft_striter(char *s, void (*f)(char *));
+void    ft_striteri(char *s, void (*f)(unsigned int, char *));
+char    *ft_strmap(char const *s, char (*f)(char));
+char    *ft_strmapi(char const *s, char(*f)(unsigned int, char));
+int     ft_strequ(char const *s1, char const *s2);
+int     ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
+void    ft_putstr(char const *s);
 
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
