@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:21:14 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/16 18:05:31 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/17 16:17:36 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	}
 	while (i < len)
 	{
-        dst[i] = '\0';
-        i++;
-    }
+		dst[i] = '\0';
+		i++;
+	}
 	return (dst);
 }

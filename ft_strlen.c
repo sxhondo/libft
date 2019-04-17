@@ -6,14 +6,14 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:20:43 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 22:24:09 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/17 16:16:26 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "libft.h"
 
-size_t      ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int		i;
 
@@ -22,4 +22,3 @@ size_t      ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-

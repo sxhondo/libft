@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:20:20 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 22:24:09 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/17 16:25:00 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
+	int		n;
+	int		ln1;
+	int		ln2;
 
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	ln1 = ft_strlen(s1);
+	ln2 = ft_strlen(s2);
+	if (ln1 >= ln2)
+		n = ln1;
+	else
+		n = ln2;
+	return (ft_memcmp(s1, s2, n));
 }
