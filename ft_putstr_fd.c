@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 21:19:28 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 16:55:15 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/18 18:12:42 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/18 18:26:32 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	ft_memset(s, 0, n);
+	int		i;
+
+	i = 0;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
 }

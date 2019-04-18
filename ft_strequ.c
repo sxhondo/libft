@@ -6,16 +6,16 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:25:42 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/17 20:28:49 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/18 18:20:21 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_strequ(char const *s1, char const *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
-    if (s1 == s2)
-        return (1);
-    else
-        return (0);
+	if (s1 == s2)
+		return (1);
+	else
+		return (0);
 }
