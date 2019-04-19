@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/18 18:08:12 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/04/19 18:59:40 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,11 @@ SRCS=ft_atoi.c \
      ft_strtrim.c \
      ft_putchar_fd.c \
      ft_putstr_fd.c \
+     ft_strsplit.c \
+     ft_putendl.c \
+     ft_putendl_fd.c \
+     ft_itoa.c \
+     ft_putnbr_fd.c
 
 OBJECTS=ft_atoi.o \
         ft_bzero.o \
@@ -105,6 +110,13 @@ OBJECTS=ft_atoi.o \
         ft_strtrim.o \
         ft_putchar_fd.o \
         ft_putstr_fd.o \
+        ft_strsplit.o \
+        ft_putendl.o \
+        ft_putendl_fd.o \
+        ft_itoa.o \
+        ft_putnbr_fd.o
+
+
 
 INCLUDES=./
 

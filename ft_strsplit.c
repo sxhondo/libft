@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 22:14:04 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:29:59 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/19 17:52:34 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	ft_putstr(char const *s)
-{
-	while (*s)
-		ft_putchar(*s++);
-}
+//char    **ft_strsplit(char const *s, char c)
+//{
+//
+//
+//}
+//
+//int     main()
+//{
+//    printf("%ss", ft_strsplit("*hello*fellow***students*", '*'));
+//}

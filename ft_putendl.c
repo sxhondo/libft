@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 22:14:04 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:29:59 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/19 17:59:38 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/19 17:59:58 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void    ft_putendl(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+    ft_putstr(s);
+    ft_putchar('\n');
 }

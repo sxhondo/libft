@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:19:41 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/15 22:24:09 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/19 18:43:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,23 @@
 
 void	ft_putnbr(int nb)
 {
-	char	c[11];
-	int		l;
-
-	l = 0;
-	if (nb == 0)
-		ft_putchar('0');
-	if (nb < 0)
-	{
-		ft_putchar('-');
-	}
-	while (l <= 11 && nb != 0)
-	{
-		if (nb % 10 < 0)
-			c[l] = ((nb % 10) * -1) + '0';
-		else
-			c[l] = (nb % 10) + '0';
-		nb = nb / 10;
-		l++;
-	}
-	while (l >= 0)
-	{
-		ft_putchar(c[l]);
-		l--;
-	}
+    if (nb == -2147483648)
+        ft_putstr("-2147483648");
+    else if (nb < 0)
+    {
+        ft_putchar('-');
+        ft_putnbr(-nb);
+    }
+    else if (nb >= 10)
+    {
+        ft_putnbr(nb / 10);
+        ft_putchar(nb % 10 + '0');
+    }
+    else
+        ft_putchar(nb + '0');
 }
+//
+//int     main()
+//{
+//    ft_putnbr(-5);
+//}

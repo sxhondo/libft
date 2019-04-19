@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:11:04 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/19 18:16:34 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,14 @@ int     ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s);
+char    **ft_strsplit(char const *s, char c);
+char    *ft_itoa(int n);
 void    ft_putstr(char const *s);
+void    ft_putendl(char const *s);
 void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char const *s, int fd);
-
+void    ft_putendl_fd(char const *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 

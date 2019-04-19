@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 17:17:21 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:04:16 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/19 17:22:23 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -14,45 +14,45 @@
 
 char    *ft_strtrim(char const *s)
 {
+    char    *istr;
     int     i;
     int     j;
     int     k;
-    int     cntr_out;
-    int     cntr_in;
-    char    *istr;
+    int     cntr1;
+    int     cntr2;
 
-    cntr_in = 0;
-    cntr_out = 0;
-    j = ft_strlen(s) - 1;
+
     i = 0;
-
+    cntr1 = 0;
     while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
     {
-        cntr_in++;
         i++;
+        cntr1++;
     }
+
+    j = ft_strlen(s) - 1;
+    cntr2 = 0;
     while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
     {
-        cntr_out++;
         j--;
+        cntr2++;
     }
 
-    istr = ft_memalloc((ft_strlen(s) - cntr_in) - cntr_out);
+    istr = ft_memalloc(ft_strlen(s) - cntr1 - cntr2 + 2);
+    if (istr == NULL)
+        return (NULL);
 
     k = 0;
-    while (s[i] != ' ' || s[i] != '\n' || s[i] != '\t')
+    while (k < j - i + 1)
     {
-        istr[k] = s[i];
+        istr[k] = s[i + k];
         k++;
-        i++;
     }
     istr[k] = '\0';
-    printf("%s", istr);
     return (istr);
-
 }
-
-int     main()
-{
-    ft_strtrim("  hello  ");
-}
+//
+//int     main()
+//{
+//    printf("%s", ft_strtrim("      "));
+//}
