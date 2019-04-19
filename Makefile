@@ -62,7 +62,8 @@ SRCS=ft_atoi.c \
      ft_putendl.c \
      ft_putendl_fd.c \
      ft_itoa.c \
-     ft_putnbr_fd.c
+     ft_putnbr_fd.c \
+     ft_lstnew.c
 
 OBJECTS=ft_atoi.o \
         ft_bzero.o \
@@ -114,7 +115,8 @@ OBJECTS=ft_atoi.o \
         ft_putendl.o \
         ft_putendl_fd.o \
         ft_itoa.o \
-        ft_putnbr_fd.o
+        ft_putnbr_fd.o \
+        ft_lstnew.o
 
 
 

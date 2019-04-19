@@ -73,4 +73,12 @@ void    ft_putnbr_fd(int n, int fd);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 
+/*      PART III    */
+typedef struct  s_list
+{
+    void            *content;
+    size_t          content_size;
+    struct s_list   *next;
+}                   t_list;
+t_list      *ft_lstnew(void const *content, size_t content_size);
 # endif

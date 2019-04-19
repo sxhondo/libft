@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 21:49:05 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:29:59 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/19 20:36:03 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/19 20:37:41 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void    ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
-	int		j;
-	char	*istr;
+    t_list      *prev;
 
-	j = 0;
-	i = 0;
-	istr = ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (istr == NULL)
+    if (alst == NULL)
         return (NULL);
-	while (s1[i])
-	{
-		istr[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		istr[i] = s2[j];
-		i++;
-		j++;
-	}
-	return (istr);
+    prev->
 }

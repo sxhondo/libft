@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:51:29 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/16 20:18:27 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/19 21:58:28 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,30 +15,28 @@
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t i;
-    size_t j;
+    size_t      i;
+    size_t      j;
 
-    i = ft_strlen(dst);
     j = 0;
-
-    while (src[j] && j < size)
-    {
-        dst[i] = src[j];
-        j++;
+    i = 0;
+    while (dst[i] && j < size)
         i++;
+    while (src[j] && (i + j + 1) < size)
+    {
+        dst[i + j] = src[j];
+        j++;
     }
-    dst[i] = '\0';
-    if (i > size)
-
-    return (i);
+    if (i != size)
+        dst[i + j] = '\0';
+    return (i + ft_strlen(src));
 }
-/*
-int     main()
-{
-    char    out[100];
-
-    ft_strcpy(out, "first");
-    ft_strlcat(out, "second", 6);
-    printf("%s", out);
-} */
+//
+//int     main()
+//{
+//    char    out[10];
+//
+//    ft_strlcat(out, "lorem ipsum dolor sit amet", 0);
+//    printf("%s", out);
+//}
 
