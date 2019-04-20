@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/16 19:51:29 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/19 21:58:28 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/20 15:26:02 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,15 +15,14 @@
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t      i;
-    size_t      j;
+    size_t i;
+    size_t j;
 
     j = 0;
     i = 0;
     while (dst[i] && j < size)
         i++;
-    while (src[j] && (i + j + 1) < size)
-    {
+    while (src[j] && (i + j + 1) < size) {
         dst[i + j] = src[j];
         j++;
     }

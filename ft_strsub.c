@@ -22,7 +22,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
     if (!s)
         return (NULL);
     istr = ft_memalloc(len - start);
-
+    if (!istr)
+        return (NULL);
     if (start > len)
         return (istr);
     while (i < len)
