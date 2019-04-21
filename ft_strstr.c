@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:21:43 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 16:55:15 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/21 18:21:45 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,20 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	char	*cp;
-	char	*s1;
-	char	*s2;
+	size_t	i;
+	size_t	j;
 
-	cp = (char *)haystack;
-	while (*cp)
+	i = 0;
+	if (haystack[0] == '\0' && needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0')
 	{
-		s1 = cp;
-		s2 = (char *)needle;
-		while (*s1 && *s2 && !(*s1 - *s2))
-		{
-			s1++;
-			s2++;
-		}
-		if (!*s2)
-			return (cp);
-		cp++;
+		j = 0;
+		while (needle[j] != '\0' && haystack[i + j] == needle[j])
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
+		i++;
 	}
 	return (NULL);
 }

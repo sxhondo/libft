@@ -6,43 +6,29 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:21:23 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 16:55:15 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/21 18:22:55 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include <string.h>
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    char    *cp;
-    char    *s1;
-    char    *s2;
-    size_t    i;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
-    cp = (char *) haystack;
-    while (*cp)
-    {
-        s1 = cp;
-        s2 = (char *) needle;
-
-        while (*s1 && *s2 && !(*s1 - *s2) && (i <= len))
-        {
-            s1++;
-            s2++;
-            i++;
-        }
-        if (!*s2)
-            return (cp);
-        cp++;
-    }
-    return (NULL);
+	i = 0;
+	if (haystack[0] == '\0' && needle[0] == '\0')
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
+	{
+		j = 0;
+		while (needle[j] && haystack[i + j] == needle[j] && i + j < len)
+			j++;
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
+		i++;
+	}
+	return (NULL);
 }
-//
-//int     main() {
-//    char *ptr;
-//
-//    ptr = strnstr("lorem ipsum dolor sit amet", "sit", 10);
-//    printf("%s", ptr);
-//}
