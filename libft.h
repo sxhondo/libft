@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/21 15:09:44 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/22 18:41:36 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void    ft_putendl_fd(char const *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
+char	*ft_strrev(char *str);
+char	*ft_strndup(const char *s1, size_t n);
 
 /*      PART III    */
 typedef struct  s_list

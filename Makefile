@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/21 15:09:44 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/04/22 18:00:13 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,6 @@ SRCS=ft_atoi.c \
      ft_strnstr.c \
      ft_strrchr.c \
      ft_strstr.c \
-     ft_swap.c \
      ft_tolower.c \
      ft_toupper.c \
      ft_memalloc.c \
@@ -63,7 +62,9 @@ SRCS=ft_atoi.c \
      ft_putendl_fd.c \
      ft_itoa.c \
      ft_putnbr_fd.c \
-     ft_lstnew.c
+     ft_lstnew.c \
+     ft_strrev.c \
+     ft_strndup.c
 
 OBJECTS=ft_atoi.o \
         ft_bzero.o \
@@ -92,7 +93,6 @@ OBJECTS=ft_atoi.o \
         ft_strnstr.o \
         ft_strrchr.o \
         ft_strstr.o \
-        ft_swap.o \
         ft_tolower.o \
         ft_toupper.o \
         ft_memalloc.o \
@@ -116,7 +116,9 @@ OBJECTS=ft_atoi.o \
         ft_putendl_fd.o \
         ft_itoa.o \
         ft_putnbr_fd.o \
-        ft_lstnew.o
+        ft_lstnew.o \
+        ft_strrev.o \
+        ft_strndup.o
 
 
 
