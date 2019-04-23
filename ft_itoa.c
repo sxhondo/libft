@@ -6,29 +6,52 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 18:12:37 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/22 20:04:46 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/23 17:55:03 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char    *ft_itoa(int n)
+int		ft_nblen(int nb)
 {
-        int     i;
-        char    *buf;
-        i = 0;
-        buf = (char *)malloc(sizeof(char) * 2);
-        if (!buf)
-            return (NULL);
-        n = 0;
-        return (buf);
+	int		len;
+
+	len = 0;
+	if (nb <= 0)
+		len = 1;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		len++;
+	}
+	return (len);
 }
 
-//n % 10 + '0'
-//n /= 10;
-//int     main()
-//{
-//
-//    printf("%s", ft_itoa(42));
-//}
+char	*ft_itoa(int n)
+{
+	unsigned int	nb;
+	int				sign;
+	int				nblen;
+	char			*tab;
+
+	nb = n;
+	nblen = ft_nblen(n);
+	tab = (char *)malloc(sizeof(char) * nblen + 1);
+	if (!tab)
+		return (NULL);
+	if (n < 0)
+	{
+		sign = 1;
+		nb = -n;
+	}
+	tab[nblen--] = '\0';
+	while (nblen >= 0)
+	{
+		tab[nblen] = nb % 10 + '0';
+		nb = nb / 10;
+		nblen--;
+	}
+	if (sign == 1)
+		tab[0] = '-';
+	return (tab);
+}

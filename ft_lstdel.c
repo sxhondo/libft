@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 20:17:28 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/23 17:55:03 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/23 18:38:28 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/23 20:05:42 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int		i;
-	char	*istr;
-	char	*estr;
+	t_list	*tmp;
+	t_list	*next;
 
-	i = 0;
-	estr = (char *)s;
-	istr = ft_memalloc(ft_strlen(s + 1));
-	if (!istr)
-		return (NULL);
-	while (s[i])
+	tmp = *alst;
+	if (del != NULL)
 	{
-		istr[i] = f(i, estr[i]);
-		i++;
+		while (tmp != NULL)
+		{
+			next = tmp->next;
+			del(tmp->content, tmp->content_size);
+			tmp = next;
+		}
+		*alst = NULL;
 	}
-	istr[i] = '\0';
-	return (istr);
 }

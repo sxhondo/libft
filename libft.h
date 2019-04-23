@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/22 18:41:36 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/23 19:47:47 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,10 @@ typedef struct  s_list
     struct s_list   *next;
 }                   t_list;
 t_list      *ft_lstnew(void const *content, size_t content_size);
+void        ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void        ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void        ft_lstadd(t_list **alst, t_list *new);
+void        ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list      *ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
 # endif

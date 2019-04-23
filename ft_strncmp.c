@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:21:08 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/21 15:09:44 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/23 17:55:03 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
+	if (!str1 || !str2)
+		return (0);
 	while (n--)
 	{
 		if (*str1 != *str2)
