@@ -6,13 +6,13 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/22 19:13:41 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_words(const char *str, const char c)
+static int		ft_words(const char *str, const char c)
 {
 	int		i;
 	int		cntr;
@@ -54,6 +54,7 @@ char	**ft_strsplit(char const *s, char c)
 		if (i > j)
 		{
 			tab[t] = ft_strndup(s + j, i - j);
+
 			t++;
 		}
 	}

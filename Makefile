@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/23 19:47:47 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/04/24 20:46:47 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS=ft_atoi.c \
      ft_putchar.c \
      ft_putnbr.c \
      ft_strcat.c \
+     ft_strlcat.c \
      ft_strchr.c \
      ft_strcmp.c \
      ft_strcpy.c \
@@ -51,6 +52,7 @@ SRCS=ft_atoi.c \
      ft_strmap.c    \
      ft_strmapi.c \
      ft_strequ.c    \
+     ft_strnequ.c \
      ft_strsub.c    \
      ft_strjoin.c \
      ft_putstr.c \
@@ -62,12 +64,10 @@ SRCS=ft_atoi.c \
      ft_putendl_fd.c \
      ft_itoa.c \
      ft_putnbr_fd.c \
-     ft_lstnew.c \
      ft_strrev.c \
      ft_strndup.c \
-     ft_lstdel.c \
-     ft_lstiter.c \
-     *ft_lstmap.c \
+     ft_lstnew.c \
+
 
 OBJECTS=ft_atoi.o \
         ft_bzero.o \
@@ -85,6 +85,7 @@ OBJECTS=ft_atoi.o \
         ft_putchar.o \
         ft_putnbr.o \
         ft_strcat.o \
+        ft_strlcat.o \
         ft_strchr.o \
         ft_strcmp.o \
         ft_strcpy.o \
@@ -94,6 +95,7 @@ OBJECTS=ft_atoi.o \
         ft_strncmp.o \
         ft_strncpy.o \
         ft_strnstr.o \
+        ft_strnequ.o \
         ft_strrchr.o \
         ft_strstr.o \
         ft_tolower.o \
@@ -119,12 +121,9 @@ OBJECTS=ft_atoi.o \
         ft_putendl_fd.o \
         ft_itoa.o \
         ft_putnbr_fd.o \
-        ft_lstnew.o \
         ft_strrev.o \
         ft_strndup.o \
-        ft_lstdel.o \
-        ft_lstiter.o \
-        *ft_lstmap.o \
+        ft_lstnew.o \
 
 INCLUDES=./
 

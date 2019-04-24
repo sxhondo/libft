@@ -6,13 +6,13 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 18:12:37 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/23 17:55:03 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 20:26:14 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nblen(int nb)
+static int		ft_nblen(int nb)
 {
 	int		len;
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	nblen = ft_nblen(n);
-	tab = (char *)malloc(sizeof(char) * nblen + 1);
+	tab = ft_memalloc(sizeof(char) * nblen + 1);
 	if (!tab)
 		return (NULL);
 	if (n < 0)
@@ -55,3 +55,9 @@ char	*ft_itoa(int n)
 		tab[0] = '-';
 	return (tab);
 }
+//
+//#include <stdio.h>
+//int     main()
+//{
+//    ft_itoa()
+//}

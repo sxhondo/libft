@@ -6,16 +6,15 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:20:43 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/21 15:09:44 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 20:17:16 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (str[i])

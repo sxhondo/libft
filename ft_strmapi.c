@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:17:28 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/23 17:55:03 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	estr = (char *)s;
-	istr = ft_memalloc(ft_strlen(s + 1));
+	istr = ft_memalloc(ft_strlen(s) + 1);
 	if (!istr)
 		return (NULL);
 	while (s[i])

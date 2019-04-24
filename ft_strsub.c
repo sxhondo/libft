@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:55:03 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/21 18:52:00 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*istr;
+    int     t;
 
+    t = (int)len;
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || t < 0)
 		return (NULL);
-	istr = (char *)malloc(sizeof(len - start) + 1);
+	istr = ft_memalloc(len + 1);
 	if (!istr)
 		return (NULL);
 	while (i < len)
 	{
 		istr[i] = s[start + i];
-		i++;
+        i++;
 	}
 	istr[i] = '\0';
-	return (istr);
+    return (istr);
 }

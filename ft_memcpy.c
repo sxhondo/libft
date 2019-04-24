@@ -6,11 +6,10 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:18:43 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/21 15:09:44 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, void *src, size_t n)
@@ -22,6 +21,8 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	i = 0;
 	csrc = (char *)src;
 	cdst = (char *)dst;
+    if (dst == src)
+        return (dst);
 	while (i < n)
 	{
 		cdst[i] = csrc[i];
