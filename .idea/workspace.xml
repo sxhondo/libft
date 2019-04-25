@@ -10,19 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1d5b7c7-aa5a-4be1-9bdb-d9bc5525a511" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ft_itoa.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_itoa.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_lstmap.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_lstmap.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_putstr_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_putstr_fd.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strchr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strcmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strcmp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_striteri.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_striteri.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strmap.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strmap.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strrchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strrchr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strrev.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strrev.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strsplit.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strsplit.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strsub.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strsub.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_strtrim.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strtrim.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +39,17 @@
     <favorites_list name="libft" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ft_strtrim.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="24" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -114,14 +112,14 @@
         <option value="$PROJECT_DIR$/ft_strmap.c" />
         <option value="$PROJECT_DIR$/ft_strrev.c" />
         <option value="$PROJECT_DIR$/ft_strsplit.c" />
-        <option value="$PROJECT_DIR$/ft_strtrim.c" />
         <option value="$PROJECT_DIR$/ft_strrchr.c" />
+        <option value="$PROJECT_DIR$/ft_strtrim.c" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="223" />
-    <option name="y" value="169" />
+    <option name="x" value="222" />
+    <option name="y" value="149" />
     <option name="width" value="1442" />
     <option name="height" value="1564" />
   </component>
@@ -238,6 +236,7 @@
       <workItem from="1556123241143" duration="4994000" />
       <workItem from="1556192705154" duration="9269000" />
       <workItem from="1556203439878" duration="7003000" />
+      <workItem from="1556213582270" duration="435000" />
     </task>
     <task id="LOCAL-00001" summary="trying git hub">
       <created>1555356320906</created>
@@ -257,7 +256,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157229000" />
+    <option name="totallyTimeSpent" value="157664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,9 +268,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="223" y="169" width="1442" height="1564" extended-state="0" />
+    <frame x="222" y="149" width="1442" height="1564" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4901758" visible="true" weight="0.24785714" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4901758" visible="true" weight="0.25142857" />
       <window_info id="Structure" order="1" sideWeight="0.50130206" side_tool="true" weight="0.24010554" />
       <window_info id="Favorites" order="2" sideWeight="0.5098242" side_tool="true" weight="0.24296057" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ft_strtrim.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ft_toupper.c">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -608,6 +601,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_strtrim.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="24" selection-end-line="26" />
         </state>
       </provider>
     </entry>
