@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 17:17:21 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:12:24 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 char	*ft_strtrim(char const *s)
 {
 	char	*istr;
-	int		i;
-	int		j;
-	int		k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
 	if (!s)

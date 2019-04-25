@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 19:19:51 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 19:38:50 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:39:16 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int		i;
+	size_t	i;
 	char	*istr;
 
 	i = 0;

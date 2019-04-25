@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:44:40 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		ft_words(const char *str, const char c)
 {
-	int		i;
+	size_t	i;
 	int		cntr;
 
 	cntr = 0;
@@ -35,9 +35,9 @@ static int		ft_words(const char *str, const char c)
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
-	int		i;
-	int		t;
-	int		j;
+	size_t	i;
+	size_t	t;
+	size_t	j;
 
 	t = 0;
 	i = 0;

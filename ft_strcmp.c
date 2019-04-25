@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:20:20 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 19:38:50 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:39:16 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	int		n;
-	int		ln1;
-	int		ln2;
+	size_t	n;
+	size_t	ln1;
+	size_t  ln2;
 
 	ln1 = ft_strlen(s1);
 	ln2 = ft_strlen(s2);
