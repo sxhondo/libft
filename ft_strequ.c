@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:25:42 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/18 18:29:59 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:38:50 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (s1 == s2)
-		return (1);
-	else
-		return (0);
+	if (!s1 || !s2)
+		return (-1);
+	return (ft_strcmp(s1, s2) == 0 ? 1 : 0);
 }

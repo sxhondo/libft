@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:05:14 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 20:30:01 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:24:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_atoi(const char *str)
 {
-    unsigned int	i;
-    long long int   nb;
+	unsigned int	i;
+	long long int	nb;
 	long			sign;
 
 	sign = 1;
@@ -38,6 +38,5 @@ int		ft_atoi(const char *str)
 		if (str[i] < '0' || str[i] > '9')
 			break ;
 	}
-//  nb = ((long int)((int)(~((unsigned int)0) / 2)));
-	return ((int)nb * sign);
+	return (nb * sign);
 }

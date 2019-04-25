@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ char	**ft_strsplit(char const *s, char c)
 
 	t = 0;
 	i = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_words(s, c) + 1));
-	if (!tab)
+	if (!s)
+		return (NULL);
+	if (!(tab = ft_memalloc(sizeof(char *) * (ft_words(s, c) + 1))))
 		return (NULL);
 	while (s[i])
 	{
@@ -54,7 +55,8 @@ char	**ft_strsplit(char const *s, char c)
 		if (i > j)
 		{
 			tab[t] = ft_strndup(s + j, i - j);
-
+			if (!tab[t])
+				free(tab);
 			t++;
 		}
 	}

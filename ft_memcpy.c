@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:18:43 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:24:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	i = 0;
 	csrc = (char *)src;
 	cdst = (char *)dst;
-    if (dst == src)
-        return (dst);
+	if (dst == src)
+		return (dst);
 	while (i < n)
 	{
 		cdst[i] = csrc[i];

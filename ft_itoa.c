@@ -6,15 +6,15 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 18:12:37 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 20:26:14 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:24:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_nblen(int nb)
+static int	ft_nblen(int nb)
 {
-	int		len;
+	int				len;
 
 	len = 0;
 	if (nb <= 0)
@@ -30,14 +30,13 @@ static int		ft_nblen(int nb)
 char	*ft_itoa(int n)
 {
 	unsigned int	nb;
+	char			*tab;
 	int				sign;
 	int				nblen;
-	char			*tab;
 
 	nb = n;
 	nblen = ft_nblen(n);
-	tab = ft_memalloc(sizeof(char) * nblen + 1);
-	if (!tab)
+	if (!(tab = ft_memalloc(sizeof(char) * nblen + 1)))
 		return (NULL);
 	if (n < 0)
 	{
@@ -55,9 +54,3 @@ char	*ft_itoa(int n)
 		tab[0] = '-';
 	return (tab);
 }
-//
-//#include <stdio.h>
-//int     main()
-//{
-//    ft_itoa()
-//}

@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:55:03 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*istr;
-    int     t;
+	size_t		i;
+	char		*istr;
+	int			t;
 
-    t = (int)len;
+	t = (int)len;
 	i = 0;
 	if (s == NULL || t < 0)
 		return (NULL);
@@ -28,8 +28,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	while (i < len)
 	{
 		istr[i] = s[start + i];
-        i++;
+		i++;
 	}
 	istr[i] = '\0';
-    return (istr);
+	return (istr);
 }

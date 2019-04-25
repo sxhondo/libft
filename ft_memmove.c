@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:19:16 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 19:24:54 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,22 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	*csrc;
-	char	*cdest;
-	char	tmp[len];
 
-	csrc = (char *)src;
-	cdest = (char *)dst;
-    i = 0;
-	while (i < len)
-	{
-		tmp[i] = csrc[i];
-		i++;
-	}
 	i = 0;
-	while (i < len)
+	if (dst == src)
+		return ((void *)src);
+	if (src < dst)
 	{
-		cdest[i] = tmp[i];
-		i++;
+		while (len--)
+			((char *)dst)[len] = ((char *)src)[len];
 	}
-	return (cdest);
+	else
+	{
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }

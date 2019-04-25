@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 22:19:00 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 19:24:54 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/04/25 20:03:27 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
-	char	*str1;
-	char	*str2;
+	t_list tmp;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		i++;
-	}
-	return (0);
+	lst = 0;
+	tmp = *f(lst);
+	return (NULL);
 }

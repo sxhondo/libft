@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 17:17:21 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/24 19:27:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/25 20:07:51 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strtrim(char const *s)
 	int		k;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-	if (s[i] == '\0')
-		return (ft_strdup(""));
 	j = ft_strlen(s) - 1;
 	while ((s[j] == ' ' || s[j] == '\n' || s[j] == '\t') && s[j])
 		j--;
-    istr = ft_memalloc(j - i + 2);
+	istr = ft_memalloc(j - i + 2);
 	if (istr == NULL)
 		return (NULL);
 	k = 0;
