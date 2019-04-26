@@ -6,31 +6,11 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/25 19:44:40 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/26 15:56:43 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int		ft_words(const char *str, const char c)
-{
-	size_t	i;
-	int		cntr;
-
-	cntr = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			i++;
-		if (str[i] != c)
-		{
-			i++;
-			cntr++;
-		}
-	}
-	return (cntr);
-}
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -43,7 +23,7 @@ char	**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (!(tab = ft_memalloc(sizeof(char *) * (ft_words(s, c) + 1))))
+	if (!(tab = ft_memalloc(sizeof(char *) * (ft_count_words(s, c) + 1))))
 		return (NULL);
 	while (s[i])
 	{
