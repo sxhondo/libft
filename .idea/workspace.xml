@@ -10,20 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1d5b7c7-aa5a-4be1-9bdb-d9bc5525a511" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_atoi.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_atoi.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_count_words.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_count_words.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.libft.h.swp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_itoa.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_itoa.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_lstmap.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_lstmap.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_nblen.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_nblen.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_putstr_fd.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_putstr_fd.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strchr.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strcmp.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strcmp.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_striteri.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_striteri.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strrchr.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strrchr.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_strnstr.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strnstr.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ft_strrev.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strrev.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strsplit.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strsplit.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ft_strtrim.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_strtrim.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libft.h" beforeDir="false" afterPath="$PROJECT_DIR$/libft.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,12 +43,21 @@
     <favorites_list name="libft" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ft_itoa.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ft_strrev.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -132,6 +131,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="761" />
     <option name="y" value="23" />
     <option name="width" value="1442" />
     <option name="height" value="1331" />
@@ -255,6 +255,7 @@
       <workItem from="1556288575630" duration="5661000" />
       <workItem from="1556295317474" duration="780000" />
       <workItem from="1556298466416" duration="1428000" />
+      <workItem from="1556302178683" duration="787000" />
     </task>
     <task id="LOCAL-00001" summary="trying git hub">
       <created>1555356320906</created>
@@ -274,7 +275,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171677000" />
+    <option name="totallyTimeSpent" value="172464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,10 +287,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1442" height="1331" extended-state="0" />
+    <frame x="761" y="23" width="1442" height="1331" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4901758" visible="true" weight="0.2692857" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4901758" visible="true" weight="0.27285713" />
       <window_info id="Structure" order="1" sideWeight="0.50130206" side_tool="true" weight="0.24010554" />
       <window_info id="Favorites" order="2" sideWeight="0.5098242" side_tool="true" weight="0.24296057" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -301,7 +302,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32863188" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.24682651" />
-      <window_info anchor="bottom" x="509" y="411" width="720" height="595" id="Terminal" order="9" visible="true" weight="0.26553673" />
+      <window_info active="true" anchor="bottom" x="509" y="411" width="720" height="595" id="Terminal" order="9" visible="true" weight="0.26553673" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -604,19 +605,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ft_atoicy.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ft_strrev copy.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ft_strrev.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ft_atoicy.c" />
+    <entry file="file://$PROJECT_DIR$/ft_strrev copy.c" />
     <entry file="file://$PROJECT_DIR$/ft_atoi.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -624,10 +614,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ft_strrev.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ft_itoa.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
