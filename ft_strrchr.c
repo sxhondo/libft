@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:21:34 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/26 17:22:55 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/26 20:07:46 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int     i;
+	int		i;
 
 	i = ft_strlen(s);
 	if (c == 0)

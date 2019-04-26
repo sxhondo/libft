@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 18:12:42 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/26 14:46:12 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/26 20:07:46 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	size_t      i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

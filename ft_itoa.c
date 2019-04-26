@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 18:12:37 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/26 18:58:29 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/26 20:27:06 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ char	*ft_itoa(int n)
     int				sign;
     char			*buf;
 
-    if (!(buf = ft_strnew(ft_nblen(n))))
-        return (NULL);
+//    if (!(buf = ft_strnew(ft_nblen(n))))
+//        return (NULL);
+    buf = ft_strnew(ft_nblen(n));
     x = n;
     if ((sign = n) < 0)
         x = -n;
