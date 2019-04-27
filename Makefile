@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/04/26 17:22:54 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/04/27 13:06:10 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,8 +72,9 @@ SRCS=ft_atoi.c \
      ft_lstiter.c \
      ft_lstadd.c \
      ft_lstmap.c \
-     ft_count_words.c \
-     ft_nblen.c
+     ft_cntwrds.c \
+     ft_nblen.c \
+     ft_flush_words.c
 
 
 OBJECTS=ft_atoi.o \
@@ -136,8 +137,9 @@ OBJECTS=ft_atoi.o \
         ft_lstiter.o \
         ft_lstadd.o \
         ft_lstmap.o \
-        ft_count_words.o \
-        ft_nblen.o
+        ft_cntwrds.o \
+        ft_nblen.o \
+        ft_flush_words.o
 INCLUDES=./
 
 all: $(NAME)

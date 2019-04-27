@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/26 21:03:50 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/04/27 13:28:17 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_nblen(int nb);
-int					ft_count_words(const char *str, const char c);
+int					ft_cntwrds(const char *str, const char c);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -91,5 +91,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_flush_words(char **words, size_t i);
 
 #endif
