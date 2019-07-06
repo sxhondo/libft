@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 20:14:38 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/07/06 17:33:55 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/07/05 17:30:18 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/07/05 17:30:20 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void				ft_lstpushback(t_list **lst, t_list *elem)
 {
-	unsigned long	nb;
-	int				sign;
-	size_t			i;
+	t_list			*tmp;
 
-	sign = 1;
-	nb = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\t')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		sign = (str[i++] == '-') ? -1 : 1;
-	while (str[i])
+	tmp = *lst;
+	if (!*lst)
+		*lst = elem;
+	else
 	{
-		if (str[i] < '0' || str[i] > '9')
-			break ;
-		nb = nb * 10 + (str[i++] - '0');
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = elem;
+		elem->next = NULL;
 	}
-	return ((int)(nb * sign));
 }

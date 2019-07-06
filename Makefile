@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/07/06 16:46:44 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/07/06 17:33:11 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,9 @@ SRCS_LIST = \
 	ft_cntwrds.c\
 	ft_nblen.c\
 	ft_flush_words.c\
-	ft_strjoin_free.c	
+	ft_strjoin_free.c\
+	ft_lstfree.c\
+	ft_lstpushback.c	
 	
 NAME = libft.a
 CC = gcc

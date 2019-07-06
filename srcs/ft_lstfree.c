@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 20:14:38 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/07/06 17:33:55 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/07/05 17:31:45 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/07/05 17:44:43 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+void				ft_lstfree(t_list **lst)
 {
-	unsigned long	nb;
-	int				sign;
-	size_t			i;
+	t_list			*next;
+	t_list			*curr;
 
-	sign = 1;
-	nb = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\t')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		sign = (str[i++] == '-') ? -1 : 1;
-	while (str[i])
+	curr = *lst;
+	while (curr)
 	{
-		if (str[i] < '0' || str[i] > '9')
-			break ;
-		nb = nb * 10 + (str[i++] - '0');
+		next = curr->next;
+		ft_memdel(&curr->content);
+		free(curr);
+		curr = next;
 	}
-	return ((int)(nb * sign));
+	*lst = NULL;
 }
