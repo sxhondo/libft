@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/07/06 17:33:11 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/07/11 18:19:11 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,6 @@ SRCS_LIST = \
 	ft_lstmap.c\
 	ft_cntwrds.c\
 	ft_nblen.c\
-	ft_flush_words.c\
 	ft_strjoin_free.c\
 	ft_lstfree.c\
 	ft_lstpushback.c	
@@ -106,7 +105,7 @@ clean:
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
