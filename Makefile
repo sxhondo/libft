@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/07/11 18:19:11 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/07/11 18:25:14 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ OBJ_DIR= obj/
 SOURCES = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJ_LIST = $(SRCS_LIST:%.c=%.o) 
 OBJECTS = $(addprefix $(OBJ_DIR), $(OBJ_LIST))	
+
 all: $(NAME) 
 
 $(NAME): $(OBJ_DIR)	
