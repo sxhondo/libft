@@ -6,7 +6,7 @@
 #    By: sxhondo <sxhondo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/15 22:10:26 by sxhondo           #+#    #+#              #
-#    Updated: 2019/07/11 18:25:14 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/07/15 12:14:15 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,8 @@ SRCS_LIST = \
 	ft_nblen.c\
 	ft_strjoin_free.c\
 	ft_lstfree.c\
-	ft_lstpushback.c	
+	ft_lstpushback.c\
+	ft_realloc.c
 	
 NAME = libft.a
 CC = gcc

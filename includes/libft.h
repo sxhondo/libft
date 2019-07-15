@@ -93,4 +93,6 @@ void				ft_print_from_tail(const t_list *list);
 char				*ft_strjoin_free(char *s1, char *s2, int w);
 void				ft_lstfree(t_list **lst);
 void				ft_lstpushback(t_list **lst, t_list *elem);
+void				*ft_realloc(void *ptr, size_t newsize);
+
 #endif
