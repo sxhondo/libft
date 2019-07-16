@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/05/04 13:50:41 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/07/16 18:15:09 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,6 @@ char	**ft_strsplit(char const *s, char c)
 		j = i;
 		while (s[i] && s[i] != c)
 			i++;
-		if (i > j)
-		{
-			if (!(tab[t] = ft_strndup(s + j, i - j)))
-				ft_flush_words(tab, i - j);
-			t++;
-		}
 	}
 	tab[t] = NULL;
 	return (tab);
