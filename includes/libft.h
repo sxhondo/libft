@@ -26,6 +26,14 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_vec
+{
+	void			*data;
+	size_t			capacity;
+	size_t			total;
+	int				type;
+}					t_vec;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, void *src, size_t n);
@@ -93,5 +101,11 @@ char				*ft_strjoin_free(char *s1, char *s2, int w);
 void				ft_lstfree(t_list **lst);
 void				ft_lstpushback(t_list **lst, t_list *elem);
 void				*ft_realloc(void *ptr, size_t newsize);
+/* 		Vector		*/
+t_vec				*ft_vec_init(size_t size, int type);
+t_vec				*ft_vec_resize(t_vec **vec);
+t_vec				*ft_vec_add(t_vec **vec, void *item);
+void				ft_vec_del(t_vec **vec);
+
 
 #endif
