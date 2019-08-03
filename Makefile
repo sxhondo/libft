@@ -87,7 +87,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 	#Directories
-INC_DIR= includes/
+INC_DIR= incs/
 SRCS_DIR = srcs/
 OBJ_DIR= obj/
 
