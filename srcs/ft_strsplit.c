@@ -6,16 +6,15 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 17:24:22 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/08/08 20:13:49 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/08/14 13:27:14 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int 			count_lines(char *s)
+static int		count_lines(char *s)
 {
-	int 		i;
+	int			i;
 
 	i = 0;
 	while (*s++)
@@ -31,9 +30,9 @@ int 			count_lines(char *s)
 	return (i);
 }
 
-char			*get_word(const char **s, char *tab)
+static char		*get_word(const char **s, char *tab)
 {
-	int 		i;
+	int			i;
 	char		*str;
 
 	i = 0;
@@ -45,38 +44,28 @@ char			*get_word(const char **s, char *tab)
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	**tab;
-	int 	lines;
-	int 	j;
-	int 	i;
+	char		**tab;
+	int			lines;
+	int			j;
+	int			i;
 
 	i = 0;
 	j = 0;
 	lines = count_lines((char *)s);
-	tab = (char **)malloc(sizeof(char *) * lines - 1); //allocating array of pointers (amount of words)
+	tab = (char **)malloc(sizeof(char *) * lines - 1);
 	while (*s)
 	{
-			while(*s == c)
-				s++;
-			if (!(tab[j] = get_word(&s, tab[j])))
-			{
-						while (tab[i])
-							free (tab[i++]);
-			}
-			s += ft_strlen(tab[j]);
-			j++;
+		while (*s == c)
+			s++;
+		if (!(tab[j] = get_word(&s, tab[j])))
+		{
+			while (tab[i])
+				free(tab[i++]);
+		}
+		s += ft_strlen(tab[j]);
+		j++;
 	}
 	return (tab);
-}
-
-int			main(int argc, char **argv)
-{
-	char		**tab;
-	char		str[] = "***";
-	tab = ft_strsplit(str, '*');
-	for (int i = 0; i < count_lines(str); i++)
-		printf("%s\n", tab[i]);
-	return (0);
 }

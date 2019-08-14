@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 17:07:04 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/04/17 22:30:33 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/08/14 13:15:57 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void		*ft_memalloc(size_t size)
 	p = malloc(size);
 	if (p == NULL)
 		return (NULL);
-	ft_memset(p, 0, size)
+	ft_memset(p, 0, size);
 	return (p);
 }

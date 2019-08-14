@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/07/16 18:15:55 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/08/14 13:20:44 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstfree(t_list **lst);
 void				ft_lstpushback(t_list **lst, t_list *elem);
+int					ft_lstlen(t_list **lst);
+
 /*		Personal	*/
 char				*ft_strjoin_free(char *s1, char *s2, int w);
 void				*ft_realloc(void *ptr, size_t newsize);

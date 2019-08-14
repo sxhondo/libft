@@ -6,7 +6,7 @@
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/23 14:11:08 by sxhondo           #+#    #+#              #
-#    Updated: 2019/07/23 14:11:13 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/08/14 13:27:55 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,12 @@ SRCS_LIST = \
 	ft_strrev.c\
 	ft_strndup.c\
 	ft_lstnew.c\
+	ft_lstlen.c\
 	ft_lstdelone.c\
 	ft_lstdel.c\
 	ft_lstiter.c\
 	ft_lstadd.c\
 	ft_lstmap.c\
-	ft_cntwrds.c\
 	ft_nblen.c\
 	ft_strjoin_free.c\
 	ft_lstfree.c\
