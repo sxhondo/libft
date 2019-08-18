@@ -33,6 +33,7 @@ SRCS_LIST = \
 	ft_strcpy.c\
 	ft_strdup.c\
 	ft_strlen.c\
+	ft_strnlen.c\
 	ft_strncat.c\
 	ft_strncmp.c\
 	ft_strncpy.c\
@@ -98,7 +99,7 @@ OBJECTS = $(addprefix $(OBJ_DIR), $(OBJ_LIST))
 
 all: $(NAME) 
 
-$(NAME): $(OBJ_DIR)
+$(NAME): $(OBJ_DIR) $(SRCS_DIR)
 	@echo "\033[32m\033[1m$(NAME) - compiling\033[0m"	
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $(SOURCES)
 	@mv $(OBJ_LIST) $(OBJ_DIR)
@@ -112,6 +113,7 @@ $(OBJ_DIR):
 clean:
 	@echo "\033[36m\033[1m$(NAME) - clean:\033[0m"
 	@rm -rf $(OBJ_DIR)
+	@rm -f ./*.o
 
 fclean: clean
 	@echo "\033[36m\033[1m$(NAME) - fclean:\033[0m"
