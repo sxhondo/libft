@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-t_vec	*ft_vec_init(size_t size, int type)
+t_vec		*ft_vec_init(size_t size, int type)
 {
 	t_vec	*vec;
 

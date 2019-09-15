@@ -19,6 +19,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
+#define ABS(n)		n < 0 ? -n : n
+
 typedef struct		s_list
 {
 	void			*content;
@@ -86,9 +88,6 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-int					ft_atoi(const char *str);
-char				*ft_itoa(int n);
-
 /*		put			*/
 
 void				ft_putstr(char const *s);
@@ -113,7 +112,8 @@ int					ft_lstlen(t_list **lst);
 
 /*		special		*/
 int					ft_nblen(int nb);
-
+int					ft_atoi(const char *str);
+char				*ft_itoa(int n);
 /* 		vector		*/
 t_vec				*ft_vec_init(size_t size, int type);
 t_vec				*ft_vec_resize(t_vec **vec);
