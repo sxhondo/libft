@@ -12,10 +12,9 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <unistd.h>
-# include <stdlib.h>
 
-#define ABS(n)		n < 0 ? -n : n
+# define ABS(n)		n < 0 ? -n : n
+# include <unistd.h>
 
 typedef struct		s_list
 {
@@ -32,7 +31,10 @@ typedef struct		s_vec
 	int				type;
 }					t_vec;
 
-/*	String manipulations.	*/
+/*
+ ** String manipulations.
+*/
+
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, size_t maxlen);
 char				*ft_strrev(char *str);
@@ -63,7 +65,10 @@ char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char *s1, char *s2, int w);
 
-/*	Mem functions	*/
+/*
+ ** Mem functions
+*/
+
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, void *src, size_t n);
@@ -75,7 +80,10 @@ void				*ft_memalloc(size_t size);
 void				*ft_realloc(void *ptr, size_t newsize);
 void				ft_memdel(void **ap);
 
-/*	ctype.h	*/
+/*
+ ** ctype.h
+*/
+
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -84,7 +92,9 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-/*		put			*/
+/*
+ ** put
+*/
 
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -95,7 +105,10 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);
 void				ft_putnbr(int nb);
 
-/*		lists		*/
+/*
+ ** lists
+*/
+
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
@@ -106,11 +119,18 @@ void				ft_lstfree(t_list **lst);
 void				ft_lstpushback(t_list **lst, t_list *elem);
 int					ft_lstlen(t_list **lst);
 
-/*		special		*/
+/*
+ ** special
+*/
+
 int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
-/* 		vector		*/
+
+/*
+ ** vector
+*/
+
 t_vec				*ft_vec_init(size_t size, int type);
 t_vec				*ft_vec_resize(t_vec **vec);
 t_vec				*ft_vec_add(t_vec **vec, void *item);
