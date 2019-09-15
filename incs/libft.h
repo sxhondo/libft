@@ -6,18 +6,14 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/08/14 13:20:44 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/08/22 01:03:46 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <string.h>
-# include <strings.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
 
 #define ABS(n)		n < 0 ? -n : n
 
@@ -36,7 +32,7 @@ typedef struct		s_vec
 	int				type;
 }					t_vec;
 
-/*		string functions */
+/*	String manipulations.	*/
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, size_t maxlen);
 char				*ft_strrev(char *str);
@@ -67,7 +63,7 @@ char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char *s1, char *s2, int w);
 
-/* 		mem functions */
+/*	Mem functions	*/
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, void *src, size_t n);
@@ -79,7 +75,7 @@ void				*ft_memalloc(size_t size);
 void				*ft_realloc(void *ptr, size_t newsize);
 void				ft_memdel(void **ap);
 
-/*		is_*		*/
+/*	ctype.h	*/
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
