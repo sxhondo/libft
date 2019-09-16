@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/07/23 14:11:08 by sxhondo           #+#    #+#              #
-#    Updated: 2019/08/14 13:27:55 by sxhondo          ###   ########.fr        #
+#    Created: 2019/09/16 17:27:58 by sxhondo           #+#    #+#              #
+#    Updated: 2019/09/16 17:27:59 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,7 @@ SRCS_LIST = \
 	ft_vec_resize.c\
 	ft_vec_add.c\
 	ft_vec_del.c
-	
+
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -101,7 +101,6 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
-	ranlib $(NAME)
 
 %.o: $(SRCS_DIR)%.c $(INC_DIR)libft.h
 	$(CC) -c $(CFLAGS) -I $(INC_DIR) $<
