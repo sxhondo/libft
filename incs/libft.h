@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/08/22 01:03:46 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/09/15 18:50:28 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define ABS(n)		n < 0 ? -n : n
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct		s_list
 {
