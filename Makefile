@@ -6,7 +6,7 @@
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 17:27:58 by sxhondo           #+#    #+#              #
-#    Updated: 2019/09/16 17:27:59 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/09/23 16:50:09 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,18 @@ SRCS_LIST = \
 	ft_vec_init.c\
 	ft_vec_resize.c\
 	ft_vec_add.c\
-	ft_vec_del.c
+	ft_vec_del.c\
+	get_next_line.c\
+	ft_printf.c\
+	csp_module.c\
+	dnum_utilities.c\
+	expand_argument.c\
+	float_module.c\
+	num_utilities.c\
+	place_num.c\
+	process_utilities.c\
+	processings.c\
+	bonuses_1.c	
 
 NAME = libft.a
 CC = gcc
@@ -95,14 +106,15 @@ OBJECTS = $(SRCS_LIST:%.c=%.o)
 
 INC_DIR= incs/
 SRCS_DIR = srcs/
-OBJ_DIR= obj/
 
 all: $(NAME)
+
+c: $(NAME) clean
 
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
-%.o: $(SRCS_DIR)%.c $(INC_DIR)libft.h
+%.o: $(SRCS_DIR)%.c $(INC_DIR)
 	$(CC) -c $(CFLAGS) -I $(INC_DIR) $<
 
 clean:

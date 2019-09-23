@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/15 18:50:28 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/09/23 16:37:31 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define ABS(n)		n < 0 ? -n : n
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -94,7 +95,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /*
- ** put
+ ** Put*
 */
 
 void				ft_putstr(char const *s);
@@ -107,7 +108,7 @@ void				ft_putchar(char c);
 void				ft_putnbr(int nb);
 
 /*
- ** lists
+ ** List manipulations
 */
 
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -121,7 +122,7 @@ void				ft_lstpushback(t_list **lst, t_list *elem);
 int					ft_lstlen(t_list **lst);
 
 /*
- ** special
+ ** Num manipulations
 */
 
 int					ft_nblen(int nb);
@@ -129,12 +130,14 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
 /*
- ** vector
+ ** Vector manipulations
 */
 
 t_vec				*ft_vec_init(size_t size, int type);
 t_vec				*ft_vec_resize(t_vec **vec);
 t_vec				*ft_vec_add(t_vec **vec, void *item);
 void				ft_vec_del(t_vec **vec);
+
+int					get_next_line(const int fd, char **line);
 
 #endif
