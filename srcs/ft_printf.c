@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 20:33:13 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/08/04 20:33:16 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/09/23 17:22:31 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void					parse_format_string(t_fmt *fmt, va_list args)
 	fmt->base = process_base(fmt);
 }
 
-int							write_in_buf(t_fmt *fmt, t_vec *buf)
+static int					write_in_buf(t_fmt *fmt, t_vec *buf)
 {
 	while (*fmt->iter != '%' && *fmt->iter)
 	{
@@ -52,7 +52,7 @@ int							write_in_buf(t_fmt *fmt, t_vec *buf)
 	return (0);
 }
 
-int							ft_fprintf(int fd, const char *fmt, va_list args)
+static int					ft_fprintf(int fd, const char *fmt, va_list args)
 {
 	t_vec					*buf;
 	t_fmt					*format;

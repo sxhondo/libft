@@ -6,13 +6,13 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 16:59:55 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/15 16:59:56 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/09/23 17:24:09 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/ft_printf.h"
 
-unsigned					put_precision(t_fmt *fmt, t_vec *buf, t_num *params,
+static unsigned				put_precision(t_fmt *fmt, t_vec *buf, t_num *params,
 											char f)
 {
 	unsigned int			i;
@@ -33,7 +33,7 @@ unsigned					put_precision(t_fmt *fmt, t_vec *buf, t_num *params,
 	return (i);
 }
 
-int							count_precision(t_fmt *fmt, unsigned nblen,
+static int					count_precision(t_fmt *fmt, unsigned nblen,
 														int64_t num, char sign)
 {
 	int						prec;
@@ -60,7 +60,7 @@ int							count_precision(t_fmt *fmt, unsigned nblen,
 	return (prec);
 }
 
-int							put_before(t_fmt *fmt, t_vec *buf, char sign)
+static int					put_before(t_fmt *fmt, t_vec *buf, char sign)
 {
 	int						len;
 	char					p_form[2];
@@ -88,7 +88,7 @@ int							put_before(t_fmt *fmt, t_vec *buf, char sign)
 	return (len);
 }
 
-unsigned					print_num(t_fmt *fmt, t_vec *buf, t_num *params,
+static unsigned				print_num(t_fmt *fmt, t_vec *buf, t_num *params,
 																	char *dig)
 {
 	char						p_form[2];
