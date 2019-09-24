@@ -128,7 +128,7 @@ int							get_num(int64_t num, t_fmt *fmt,
 	if (!(params = ft_memalloc(sizeof(t_num))))
 		return (0);
 	params->num = num;
-	params->nblen = (unsigned int)itoa_base(num, digits, fmt->base, sig);
+	params->nblen = (unsigned int)pf_itoa_base(num, digits, fmt->base, sig);
 	params->nblen += recount_nblen(fmt, num);
 	handle_negative(fmt, num);
 	if (!(params->sign = get_sign(fmt, buf, num, sig)) && fmt->base == 10)

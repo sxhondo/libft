@@ -109,7 +109,7 @@ void					get_ptr(t_fmt *fmt, va_list args, t_vec *buf)
 
 	tmp = ' ';
 	pointer = (uint64_t)va_arg(args, void *);
-	hexlen = (int)itoa_base(pointer, hex, 16, 0);
+	hexlen = (int)pf_itoa_base(pointer, hex, 16, 0);
 	prec = 0;
 	if (fmt->precision == 0 && !(ft_strcmp(hex, "0")) && ++prec)
 		ft_bzero(hex, 15);

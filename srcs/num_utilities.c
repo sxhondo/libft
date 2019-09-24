@@ -12,7 +12,7 @@
 
 #include "../incs/ft_printf.h"
 
-unsigned int			itoa_base(uint64_t num, char s[],
+unsigned int			pf_itoa_base(uint64_t num, char s[],
 														unsigned base, int sig)
 {
 	const char			hex_table[17] = "0123456789abcdef";
