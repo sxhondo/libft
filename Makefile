@@ -96,7 +96,9 @@ SRCS_LIST = \
 	place_num.c\
 	process_utilities.c\
 	processings.c\
-	bonuses_1.c	
+	bonuses_1.c\
+	ft_itoa_base.c\
+	ft_pow.c
 
 NAME = libft.a
 CC = gcc
