@@ -132,7 +132,7 @@ int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 uint64_t			pow_of(int num, int pow);
-unsigned 			ft_itoa_base(uint64_t num, char s[], unsigned base);
+unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
 
 /*
  ** Vector manipulations

@@ -81,7 +81,8 @@ int					get_dnum(long double dnum, t_fmt *fmt, t_vec *buf);
 ** num - utilities
 */
 
-unsigned int		pf_itoa_base(uint64_t num, char s[], unsigned base, int sig);
+unsigned int		pf_itoa_base(uint64_t num, char s[], unsigned base,
+																	int sig);
 void				handle_negative(t_fmt *fmt, int64_t num);
 void				apply_upcase(char *tmp);
 char				get_sign(t_fmt *fmt, t_vec *buf, int64_t num, int sig);
