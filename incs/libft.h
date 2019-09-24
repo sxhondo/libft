@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 # define ABS(n)		n < 0 ? -n : n
+
 # include <unistd.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
@@ -66,6 +68,7 @@ char				*ft_strtrim(char const *s);
 char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char *s1, char *s2, int w);
+unsigned			bin_to_dec(char *str);
 
 /*
  ** Mem functions
@@ -128,6 +131,7 @@ int					ft_lstlen(t_list **lst);
 int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+uint64_t			pow_of(int num, int pow);
 
 /*
  ** Vector manipulations

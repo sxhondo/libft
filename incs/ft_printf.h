@@ -15,7 +15,6 @@
 
 # include "libft.h"
 # include <stdarg.h>
-# include <stdint.h>
 
 # define ZERO		1u
 # define PLUS		4u
