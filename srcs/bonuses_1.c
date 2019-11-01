@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 19:23:37 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/23 16:48:31 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/11/01 19:57:17 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ int						get_valid_name(t_fmt *fmt, char *tab)
 
 static int				check_bold(t_fmt *fmt, char *tab, char *col)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	if (fmt->lmodifier & 128u)
 	{
 		i++;
-		fmt->lmodifier &= ~ 128u;
+		fmt->lmodifier &= ~128u;
 		if (!(ft_strcmp(tab, "yellow")))
 			ft_memcpy(col, "[01;", 5);
 		else
@@ -114,5 +114,5 @@ void					get_color(t_fmt *fmt, t_vec *buf)
 	else if (!(ft_strcmp(tab, "eoc")))
 		ft_memcpy(col, "[0m", 4);
 	if (i > 0 && put_col_in_buf(buf, col))
-		fmt->iter +=  i + 2;
+		fmt->iter += i + 2;
 }
