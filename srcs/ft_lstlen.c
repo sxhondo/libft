@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 18:57:27 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/08/14 13:17:20 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/11/01 20:08:44 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int				ft_lstlen(t_list **lst)
 
 	i = 0;
 	tmp = *lst;
-	while ((tmp = tmp->next))
+	while (tmp)
+	{
+		tmp = tmp->next;
 		i++;
+	}
 	return (i);
 }
