@@ -50,7 +50,6 @@ static char			*add_entry(t_list **file, int fd)
 
 	if (!(tmp = search_entry(file, fd)))
 	{
-		delete(file, NULL);
 		tmp = ft_lstnew("", 1);
 		tmp->content_size = (size_t)fd;
 		ft_lstadd(file, tmp);
@@ -79,7 +78,7 @@ static int			convert(t_list **file, char *tmp, char **line, int fd)
 		return (1);
 	}
 	(search_entry(file, fd))->content_size = -1;
-	delete(file, tmp);
+	ft_strdel(&tmp);
 	return (1);
 }
 
