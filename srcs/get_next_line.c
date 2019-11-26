@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-t_list				*search_entry(t_list **file, int fd)
+static t_list	*search_entry(t_list **file, int fd)
 {
 	t_list		*tmp;
 
@@ -27,7 +27,7 @@ t_list				*search_entry(t_list **file, int fd)
 	return (NULL);
 }
 
-char				*add_entry(t_list **file, int fd)
+static char			*add_entry(t_list **file, int fd)
 {
 	t_list			*tmp;
 
@@ -40,7 +40,7 @@ char				*add_entry(t_list **file, int fd)
 	return ((char *)tmp->content);
 }
 
-int					convert(t_list **file, char *tmp, char **line, int fd)
+static int			convert(t_list **file, char *tmp, char **line, int fd)
 {
 	int				i;
 	char			*left;
@@ -65,6 +65,22 @@ int					convert(t_list **file, char *tmp, char **line, int fd)
 	return (1);
 }
 
+static int			delete(t_list **file, char *tmp)
+{
+	t_list			*p;
+	t_list			*next;
+
+	ft_strdel(&tmp);
+	p = *file;
+	while (p)
+	{
+		next = p->next;
+		free(p);
+		p = next;
+	}
+	return (0);
+}
+
 int					get_next_line(const int fd, char **line)
 {
 	static t_list	*file;
@@ -83,6 +99,6 @@ int					get_next_line(const int fd, char **line)
 			break ;
 	}
 	if (!ft_strlen(tmp))
-		return (0);
+		return (delete(&file, tmp));
 	return (convert(&file, tmp, line, fd));
 }
