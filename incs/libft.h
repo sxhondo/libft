@@ -127,7 +127,7 @@ int					ft_lstlen(t_list **lst);
 /*
  ** Num manipulations
 */
-
+int					*ft_new_array(int size, int c);
 int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);

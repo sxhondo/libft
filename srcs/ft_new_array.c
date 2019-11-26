@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_new_array.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/28 18:20:56 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/23 16:44:47 by sxhondo          ###   ########.fr       */
+/*   Created: 2019/11/26 21:09:13 by sxhondo           #+#    #+#             */
+/*   Updated: 2019/11/26 21:09:14 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "libft.h"
-# define BUFF_SIZE	1
+int			*ft_new_array(int size, int c)
+{
+	int 	i;
+	int 	*tab;
 
-int					get_next_line(const int fd, char **line);
-
-#endif
+	if (!size || size < 0 || !(tab = (int *)malloc(sizeof(int *) * size)))
+		return (0);
+	i = -1;
+	while (++i < size)
+		tab[i] = c;
+	return (tab);
+}

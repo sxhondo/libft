@@ -95,7 +95,8 @@ SRCS_LIST = \
 	processings.c\
 	bonuses_1.c\
 	ft_itoa_base.c\
-	ft_pow.c
+	ft_pow.c\
+	ft_new_array.c
 
 NAME = libft.a
 CC = gcc
