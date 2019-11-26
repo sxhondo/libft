@@ -82,10 +82,7 @@ SRCS_LIST = \
 	ft_lstfree.c\
 	ft_lstpushback.c\
 	ft_realloc.c\
-	ft_vec_init.c\
-	ft_vec_resize.c\
-	ft_vec_add.c\
-	ft_vec_del.c\
+	ft_vectors.c\
 	get_next_line.c\
 	ft_printf.c\
 	csp_module.c\
@@ -108,6 +105,7 @@ OBJECTS = $(SRCS_LIST:%.c=%.o)
 
 INC_DIR= incs/
 SRCS_DIR = srcs/
+OBJ_DIR = obj/
 
 all: $(NAME)
 
