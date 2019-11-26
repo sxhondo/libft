@@ -27,12 +27,30 @@ static t_list	*search_entry(t_list **file, int fd)
 	return (NULL);
 }
 
+static int			delete(t_list **file, char *tmp)
+{
+	t_list			*p;
+	t_list			*next;
+
+	ft_strdel(&tmp);
+	p = *file;
+	while (p)
+	{
+		next = p->next;
+		free(p);
+		p = next;
+	}
+	return (0);
+}
+
+
 static char			*add_entry(t_list **file, int fd)
 {
 	t_list			*tmp;
 
 	if (!(tmp = search_entry(file, fd)))
 	{
+		delete(file, NULL);
 		tmp = ft_lstnew("", 1);
 		tmp->content_size = (size_t)fd;
 		ft_lstadd(file, tmp);
@@ -61,24 +79,8 @@ static int			convert(t_list **file, char *tmp, char **line, int fd)
 		return (1);
 	}
 	(search_entry(file, fd))->content_size = -1;
-	ft_strdel(&tmp);
+	delete(file, tmp);
 	return (1);
-}
-
-static int			delete(t_list **file, char *tmp)
-{
-	t_list			*p;
-	t_list			*next;
-
-	ft_strdel(&tmp);
-	p = *file;
-	while (p)
-	{
-		next = p->next;
-		free(p);
-		p = next;
-	}
-	return (0);
 }
 
 int					get_next_line(const int fd, char **line)
