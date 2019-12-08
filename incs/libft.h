@@ -13,12 +13,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# define ABS(n)		n < 0 ? -n : n
-
 # include <unistd.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <fcntl.h>
+
+#define ABS(x) ((x) < 0 ? -(x) : (x))
 
 typedef struct		s_list
 {
