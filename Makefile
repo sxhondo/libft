@@ -85,18 +85,19 @@ SRCS_LIST = \
 	ft_vectors.c\
 	get_next_line.c\
 	ft_printf.c\
-	csp_module.c\
-	dnum_utilities.c\
-	expand_argument.c\
-	float_module.c\
-	num_utilities.c\
-	place_num.c\
-	process_utilities.c\
-	processings.c\
-	bonuses_1.c\
+	ft_pf_csp_module.c\
+	ft_pf_dnum_utilities.c\
+	ft_pf_expand_argument.c\
+	ft_pf_float_module.c\
+	ft_pf_num_utilities.c\
+	ft_pf_place_num.c\
+	ft_pf_process_utilities.c\
+	ft_pf_processings.c\
+	ft_pf_bonuses_1.c\
 	ft_itoa_base.c\
 	ft_pow.c\
-	ft_new_array.c
+	ft_new_array.c\
+	ft_new_ptr_array.c\
 
 NAME = libft.a
 CC = gcc

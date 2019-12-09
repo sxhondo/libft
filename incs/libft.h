@@ -84,6 +84,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memalloc(size_t size);
 void				*ft_realloc(void *ptr, size_t newsize);
 void				ft_memdel(void **ap);
+void				**ft_new_ptr_array(int size);
 
 /*
  ** ctype.h
