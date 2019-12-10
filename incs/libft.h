@@ -18,7 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-#define ABS(x) ((x) < 0 ? -(x) : (x))
+#define MIN(a, b)	((a) < (b) ? (a) : (b))
+#define ABS(x) 		((x) < 0 ? -(x) : (x))
 
 typedef struct		s_list
 {
