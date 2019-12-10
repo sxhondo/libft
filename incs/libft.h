@@ -128,6 +128,7 @@ int					ft_lstlen(t_list **lst);
 /*
  ** Num manipulations
 */
+int					**ft_allocate_mx(int x, int y, int fill);
 int					*ft_new_array(int size, int c);
 int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
