@@ -10,10 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-# $@ Имя цели обрабатываемого правила
-# $< Имя первой зависимости обрабатываемого правила
-# $^ Список всех зависимостей обрабатываемого правила
-
 SRCS_LIST = \
 	ft_atoi.c\
 	ft_bzero.c\
@@ -104,24 +100,26 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-OBJECTS = $(SRCS_LIST:%.c=%.o)
-
 INC_DIR= incs/
 SRCS_DIR = srcs/
 OBJ_DIR = obj/
 
+OBJ_LIST = $(SRCS_LIST:%.c=%.o)
+OBJECTS = $(addprefix $(OBJ_DIR), $(OBJ_LIST))
+
 all: $(NAME)
 
-c: $(NAME) clean
-
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJ_DIR) $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
-%.o: $(SRCS_DIR)%.c $(INC_DIR)
-	$(CC) -c $(CFLAGS) -I $(INC_DIR) $<
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(INC_DIR)
+	$(CC) -c $(CFLAGS) $< -o $@ -I $(INC_DIR)
 
 clean:
-	@rm -f $(OBJECTS)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
