@@ -6,7 +6,7 @@
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 17:27:58 by sxhondo           #+#    #+#              #
-#    Updated: 2019/09/23 16:50:09 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/12/11 21:06:34 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,19 +110,25 @@ OBJECTS = $(addprefix $(OBJ_DIR), $(OBJ_LIST))
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+	@printf "%-50s\n" done
+	@ar rcs $(NAME) $(OBJECTS)
+	@printf "indexing lib\n"
 
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)
+	@printf "make dir %s\n" $(OBJ_DIR)
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(INC_DIR)
-	$(CC) -c $(CFLAGS) $< -o $@ -I $(INC_DIR)
+	@$(CC) -c $(CFLAGS) $< -o $@ -I $(INC_DIR)
+	@printf "\r 🙄 compiling %35s \r" $<
 
 clean:
 	@rm -rf $(OBJ_DIR)
+	@printf "%s deleted\n" $(OBJ_DIR)
 
 fclean: clean
 	@rm -rf $(NAME)
+	@printf "%s deleted\n" $(NAME)
 
 re: fclean all
 
