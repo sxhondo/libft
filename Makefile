@@ -6,7 +6,7 @@
 #    By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/16 17:27:58 by sxhondo           #+#    #+#              #
-#    Updated: 2019/12/11 21:06:34 by sxhondo          ###   ########.fr        #
+#    Updated: 2019/12/11 22:27:47 by sxhondo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,10 +109,10 @@ OBJECTS = $(addprefix $(OBJ_DIR), $(OBJ_LIST))
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJECTS)
-	@printf "%-50s\n" done
+$(NAME): $(OBJ_DIR) $(OBJECTS) 
+	@printf "\r🙄compiling %35s\r" "done"
 	@ar rcs $(NAME) $(OBJECTS)
-	@printf "indexing lib\n"
+	@printf "\nindexing lib"
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -120,7 +120,7 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(INC_DIR)
 	@$(CC) -c $(CFLAGS) $< -o $@ -I $(INC_DIR)
-	@printf "\r 🙄 compiling %35s \r" $<
+	@printf "\r🙄compiling %35s\r" $<
 
 clean:
 	@rm -rf $(OBJ_DIR)
