@@ -53,7 +53,7 @@ static int					write_in_buf(t_fmt *fmt, t_vec *buf)
 	return (0);
 }
 
-static int					ft_fprintf(int fd, const char *fmt, va_list args)
+static int					ft_vfprintf(int fd, const char *fmt, va_list args)
 {
 	t_vec					*buf;
 	t_fmt					*format;
@@ -78,6 +78,19 @@ static int					ft_fprintf(int fd, const char *fmt, va_list args)
 	return (save);
 }
 
+int							ft_fprintf(int fd, const char *restrict format, ...)
+{
+	va_list					args;
+	int						done;
+
+	if (!format)
+		return (-1);
+	va_start(args, format);
+	done = ft_vfprintf(fd, format, args);
+	va_end(args);
+	return (done);
+}
+
 int							ft_printf(const char *restrict format, ...)
 {
 	va_list					args;
@@ -86,7 +99,7 @@ int							ft_printf(const char *restrict format, ...)
 	if (!format)
 		return (-1);
 	va_start(args, format);
-	done = ft_fprintf(1, format, args);
+	done = ft_vfprintf(1, format, args);
 	va_end(args);
 	return (done);
 }

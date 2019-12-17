@@ -124,4 +124,6 @@ void				get_color(t_fmt *fmt, t_vec *buf);
 void				put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
 															unsigned lcpy);
 int					ft_printf(const char *format, ...);
+int					ft_fprintf(int fd, const char *restrict format, ...);
+
 #endif
