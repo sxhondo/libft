@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 22:22:09 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/23 16:37:31 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/12/14 17:59:59 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ int					ft_lstlen(t_list **lst);
 /*
  ** Num manipulations
 */
+void 				ft_swap_int(int *a, int *b);
 int					**ft_allocate_mx(int x, int y, int fill);
 int					*ft_new_array(int size, int c);
 int					ft_nblen(int nb);

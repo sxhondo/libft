@@ -94,7 +94,8 @@ SRCS_LIST = \
 	ft_pow.c\
 	ft_new_array.c\
 	ft_new_ptr_array.c\
-	ft_allocate_mx.c
+	ft_allocate_mx.c\
+	ft_swap_int.c
 
 NAME = libft.a
 CC = gcc
