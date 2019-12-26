@@ -6,15 +6,15 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 17:58:41 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/23 16:48:42 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/12/26 13:28:26 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static t_list	*search_entry(t_list **file, int fd)
+static t_list		*search_entry(t_list **file, int fd)
 {
-	t_list		*tmp;
+	t_list			*tmp;
 
 	tmp = *file;
 	while (tmp)
@@ -26,23 +26,6 @@ static t_list	*search_entry(t_list **file, int fd)
 	}
 	return (NULL);
 }
-
-static int			delete(t_list **file, char *tmp)
-{
-	t_list			*p;
-	t_list			*next;
-
-	ft_strdel(&tmp);
-	p = *file;
-	while (p)
-	{
-		next = p->next;
-		free(p);
-		p = next;
-	}
-	return (0);
-}
-
 
 static char			*add_entry(t_list **file, int fd)
 {
@@ -100,6 +83,6 @@ int					get_next_line(const int fd, char **line)
 			break ;
 	}
 	if (!ft_strlen(tmp))
-		return (delete(&file, tmp));
+		return (0);
 	return (convert(&file, tmp, line, fd));
 }

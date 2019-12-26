@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 19:03:58 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/12/10 19:03:59 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/12/26 13:24:42 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void				free_prev(int **mx, int i)
 
 int						**ft_allocate_mx(int x, int y, int fill)
 {
-	int 				i;
-	int 				**mx;
+	int					i;
+	int					**mx;
 
 	if (x <= 0 || y <= 0)
 		return (NULL);

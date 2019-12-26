@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-void	ft_vec_del(t_vec **vec)
+void		ft_vec_del(t_vec **vec)
 {
 	free((*vec)->data);
 	free(*vec);
 	*vec = NULL;
 }
 
-t_vec	*ft_vec_resize(t_vec **vec)
+t_vec		*ft_vec_resize(t_vec **vec)
 {
 	void	*data;
 
@@ -32,10 +32,10 @@ t_vec	*ft_vec_resize(t_vec **vec)
 	return (*vec);
 }
 
-t_vec	*ft_vec_add(t_vec **vec, void *item)
+t_vec		*ft_vec_add(t_vec **vec, void *item)
 {
-	void			*tmp;
-	t_vec			*p;
+	void	*tmp;
+	t_vec	*p;
 
 	if (!*vec)
 		return (NULL);

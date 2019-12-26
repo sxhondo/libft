@@ -6,7 +6,7 @@
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 21:00:54 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/12/09 21:00:55 by sxhondo          ###   ########.fr       */
+/*   Updated: 2019/12/26 13:26:50 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void					**ft_new_ptr_array(int size)
 {
-	int 				i;
+	int					i;
 	void				**tab;
 
-	if (!(tab = (void **)malloc(sizeof(void *) * size))
-			|| size <= 0)
+	if (size <= 0 || !(tab = (void **)malloc(sizeof(void *) * size)))
 		return (NULL);
 	i = -1;
 	while (++i < size)
 		tab[i] = NULL;
 	return (tab);
 }
-

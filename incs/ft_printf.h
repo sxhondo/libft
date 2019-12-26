@@ -125,5 +125,6 @@ void				put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
 															unsigned lcpy);
 int					ft_printf(const char *format, ...);
 int					ft_fprintf(int fd, const char *restrict format, ...);
+int					ft_vfprintf(int fd, const char *fmt, va_list args);
 
 #endif
