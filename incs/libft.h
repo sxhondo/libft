@@ -18,8 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-#define MIN(a, b)	((a) < (b) ? (a) : (b))
-#define ABS(x) 		((x) < 0 ? -(x) : (x))
+# define MIN(a, b) (((a) < (b)) ? (a) : (b))
+# define ABS(x)	((x) < 0 ? -(x) : (x))
 
 typedef struct		s_list
 {
@@ -129,7 +129,7 @@ int					ft_lstlen(t_list **lst);
 /*
  ** Num manipulations
 */
-void 				ft_swap_int(int *a, int *b);
+void				ft_swap_int(int *a, int *b);
 int					**ft_allocate_mx(int x, int y, int fill);
 int					*ft_new_array(int size, int c);
 int					ft_nblen(int nb);
@@ -137,6 +137,7 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 uint64_t			pow_of(int num, int pow);
 unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
+int					ft_print_array(const int *arr, int len);
 
 /*
  ** Vector manipulations
