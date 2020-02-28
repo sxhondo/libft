@@ -18,9 +18,6 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define MIN(a, b) (((a) < (b)) ? (a) : (b))
-# define ABS(x)	((x) < 0 ? -(x) : (x))
-
 typedef struct		s_list
 {
 	void			*content;
@@ -37,9 +34,8 @@ typedef struct		s_vec
 }					t_vec;
 
 /*
- ** String manipulations.
+ ** ft_libc/
 */
-
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, size_t maxlen);
 char				*ft_strrev(char *str);
@@ -70,11 +66,6 @@ char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strjoin_free(char *s1, char *s2, int w);
 unsigned			bin_to_dec(char *str);
-
-/*
- ** Mem functions
-*/
-
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, void *src, size_t n);
@@ -86,11 +77,6 @@ void				*ft_memalloc(size_t size);
 void				*ft_realloc(void *ptr, size_t newsize);
 void				ft_memdel(void **ap);
 void				**ft_new_ptr_array(int size);
-
-/*
- ** ctype.h
-*/
-
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -98,11 +84,6 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-
-/*
- ** Put*
-*/
-
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putchar_fd(char c, int fd);
@@ -111,11 +92,20 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);
 void				ft_putnbr(int nb);
+void				ft_swap_int(int *a, int *b);
+int					**ft_allocate_mx(int x, int y, int fill);
+int					*ft_new_array(int size, int c);
+int					ft_nblen(int nb);
+int					ft_atoi(const char *str);
+char				*ft_itoa(int n);
+uint64_t			pow_of(int num, int pow);
+unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
+int					ft_print_array(const int *arr, int len);
+
 
 /*
- ** List manipulations
+ ** ft_lst/
 */
-
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
@@ -127,22 +117,8 @@ void				ft_lstpushback(t_list **lst, t_list *elem);
 int					ft_lstlen(t_list **lst);
 
 /*
- ** Num manipulations
+ ** ft_vector/
 */
-void				ft_swap_int(int *a, int *b);
-int					**ft_allocate_mx(int x, int y, int fill);
-int					*ft_new_array(int size, int c);
-int					ft_nblen(int nb);
-int					ft_atoi(const char *str);
-char				*ft_itoa(int n);
-uint64_t			pow_of(int num, int pow);
-unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
-int					ft_print_array(const int *arr, int len);
-
-/*
- ** Vector manipulations
-*/
-
 t_vec				*ft_vec_init(size_t size, int type);
 t_vec				*ft_vec_resize(t_vec **vec);
 t_vec				*ft_vec_add(t_vec **vec, void *item);

@@ -97,7 +97,7 @@ int								dtoa(long double dnum, unsigned char dig[],
 	p = dig;
 	zero_tmblr = 0;
 	i = fmt->precision;
-	dnum = ABS(dnum);
+	dnum = dnum < 0 ? -dnum : dnum; 
 	if ((uint64_t)dnum == 0)
 		zero_tmblr = put_zero(fmt, ptr);
 	if (*fmt->iter == 'e' || *fmt->iter == 'E')

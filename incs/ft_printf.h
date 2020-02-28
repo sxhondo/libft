@@ -116,7 +116,7 @@ int					skip_atoi(const char *s);
 int					ft_isspecial(char ch);
 
 /*
-** some bonuses
+** bonuses
 */
 
 void				print_non_printable(t_fmt *fmt, va_list args, t_vec *buf);

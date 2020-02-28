@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned				itoa_base(uint64_t num, char s[], unsigned base)
+unsigned				pf_itoa_base(uint64_t num, char s[], unsigned base)
 {
 	const char			hex_table[17] = "0123456789abcdef";
 	uint64_t			rmndr;
