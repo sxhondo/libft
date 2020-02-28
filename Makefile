@@ -33,3 +33,5 @@ clean:
 
 fclean: clean
 	rm -rf $(LIB)
+
+re: fclean all
