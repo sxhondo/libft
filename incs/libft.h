@@ -101,7 +101,8 @@ char				*ft_itoa(int n);
 uint64_t			pow_of(int num, int pow);
 unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
 int					ft_print_array(const int *arr, int len);
-
+char				**ft_strsplit(char const *s, char c);
+void 				ft_strsplit_free(char **tab);
 
 /*
  ** ft_lst/

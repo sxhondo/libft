@@ -12,60 +12,84 @@
 
 #include "libft.h"
 
-static int		count_lines(char *s)
+static char		**free_previous(char **ret, int i)
 {
-	int			i;
-
-	i = 0;
-	while (*s++)
+	while (i)
 	{
-		if (ft_isalpha(*s))
-		{
-			while (ft_isalpha(*s))
-				s++;
-			i++;
-		}
-		s++;
+		ft_strdel(&ret[i]);
+		i--;
 	}
-	return (i);
+	return (NULL);
 }
 
-static char		*get_word(const char **s, char *tab)
+static size_t	count_words(const char *str, char c)
 {
-	int			i;
-	char		*str;
+	size_t		w;
+
+	w = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str)
+			w += 1;
+		while (*str && *str != c)
+			str++;
+	}
+	return (w);
+}
+
+static char		*get_word(const char *s, char c)
+{
+	char		*ret;
+	size_t		i;
 
 	i = 0;
-	str = (char *)*s;
-	while (ft_isalpha(str[i]))
+	while (s[i] && s[i] != c)
 		i++;
-	if (!(tab = ft_strndup(str, i)))
-		return (NULL);
-	return (tab);
+	if (i == 0 || !(ret = ft_strndup(s, i)))
+		return (0);
+	return (ret);
+}
+
+void			ft_strsplit_free(char **tab)
+{
+	char		**tmp;
+
+	tmp = tab;
+	if (tab)
+	{
+		while (*tab)
+		{
+			ft_strdel(&(*tab));
+			tab++;
+		}
+		free(tmp);
+	}
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char		**tab;
-	int			lines;
-	int			j;
-	int			i;
+	char		**ret;
+	size_t		i;
+	size_t		words;
 
-	i = 0;
-	j = 0;
-	lines = count_lines((char *)s);
-	tab = (char **)malloc(sizeof(char *) * lines - 1);
-	while (*s)
+	ret = NULL;
+	if (s && c && (words = count_words(s, c)) > 0)
 	{
-		while (*s == c)
-			s++;
-		if (!(tab[j] = get_word(&s, tab[j])))
+		if (!(ret = (char **)ft_memalloc(sizeof(char *) * (words + 1))))
+			return (NULL);
+		i = 0;
+		while (*s)
 		{
-			while (tab[i])
-				free(tab[i++]);
+			while (*s && *s == c)
+				s++;
+			if (!(ret[i] = get_word(s, c)))
+				return (free_previous(ret, i));
+			s += ft_strlen(ret[i]);
+			i++;
 		}
-		s += ft_strlen(tab[j]);
-		j++;
+		ret[i] = NULL;
 	}
-	return (tab);
+	return (ret);
 }
