@@ -12,7 +12,7 @@
 
 #include "../incs/ft_printf.h"
 
-void					print_non_printable(t_fmt *fmt, va_list args,
+void					pf_print_non_printable(t_fmt *fmt, va_list args,
 																	t_vec *buf)
 {
 	int					len;
@@ -24,16 +24,16 @@ void					print_non_printable(t_fmt *fmt, va_list args,
 	len = ft_strnlen(str, fmt->precision);
 	lcpy = len;
 	if (fmt->flags & LEFT)
-		put_nonp_in_buf(fmt, buf, str, lcpy);
+		pf_put_nonp_in_buf(fmt, buf, str, lcpy);
 	tmp = fmt->flags & ZERO ? '0' : ' ';
 	while (--fmt->width >= len)
 		ft_vec_add(&buf, &tmp);
 	if (!(fmt->flags & LEFT))
-		put_nonp_in_buf(fmt, buf, str, len);
+		pf_put_nonp_in_buf(fmt, buf, str, len);
 	fmt->iter += 1;
 }
 
-int						get_valid_name(t_fmt *fmt, char *tab)
+int						pf_get_valid_name(t_fmt *fmt, char *tab)
 {
 	const char			*str;
 	int					i;
@@ -60,7 +60,7 @@ int						get_valid_name(t_fmt *fmt, char *tab)
 	return (i);
 }
 
-static int				check_bold(t_fmt *fmt, char *tab, char *col)
+static int				pf_check_bold(t_fmt *fmt, char *tab, char *col)
 {
 	int		i;
 
@@ -79,7 +79,7 @@ static int				check_bold(t_fmt *fmt, char *tab, char *col)
 	return (i);
 }
 
-int						put_col_in_buf(t_vec *buf, char *col)
+int						pf_put_col_in_buf(t_vec *buf, char *col)
 {
 	char				spec;
 
@@ -90,15 +90,15 @@ int						put_col_in_buf(t_vec *buf, char *col)
 	return (1);
 }
 
-void					get_color(t_fmt *fmt, t_vec *buf)
+void					pf_get_color(t_fmt *fmt, t_vec *buf)
 {
 	char				tab[20];
 	char				col[20];
 	int					i;
 
 	i = 0;
-	i += get_valid_name(fmt, tab);
-	i += check_bold(fmt, tab, col);
+	i += pf_get_valid_name(fmt, tab);
+	i += pf_check_bold(fmt, tab, col);
 	if (!(ft_strcmp(tab, "red")))
 		ft_strcat(col, "31m");
 	else if (!(ft_strcmp(tab, "green")))
@@ -113,6 +113,6 @@ void					get_color(t_fmt *fmt, t_vec *buf)
 		ft_strcat(col, "36m");
 	else if (!(ft_strcmp(tab, "eoc")))
 		ft_memcpy(col, "[0m", 4);
-	if (i > 0 && put_col_in_buf(buf, col))
+	if (i > 0 && pf_put_col_in_buf(buf, col))
 		fmt->iter += i + 2;
 }

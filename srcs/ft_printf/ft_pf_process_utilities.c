@@ -12,7 +12,7 @@
 
 #include "../incs/ft_printf.h"
 
-int				skip_atoi(const char *s)
+int				pf_skip_atoi(const char *s)
 {
 	int			i;
 
@@ -22,7 +22,7 @@ int				skip_atoi(const char *s)
 	return (i);
 }
 
-int				ft_isspecial(char ch)
+int				pf_ft_isspecial(char ch)
 {
 	if (ch == '*' || ch == '.' || ch == '%')
 		return (0);
@@ -31,7 +31,7 @@ int				ft_isspecial(char ch)
 	return (0);
 }
 
-void			put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
+void			pf_put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
 									unsigned lcpy)
 {
 	char		ast;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned				bin_to_dec(char *str)
+unsigned				pf_bin_to_dec(char *str)
 {
 	unsigned			res;
 	unsigned			len;

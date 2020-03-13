@@ -12,8 +12,8 @@
 
 #include "../incs/ft_printf.h"
 
-static unsigned				put_precision(t_fmt *fmt, t_vec *buf, t_num *params,
-											char f)
+static unsigned				pf_put_precision(t_fmt *fmt, t_vec *buf,
+										t_num *params, char f)
 {
 	unsigned int			i;
 	char					sp;
@@ -33,7 +33,7 @@ static unsigned				put_precision(t_fmt *fmt, t_vec *buf, t_num *params,
 	return (i);
 }
 
-static int					count_precision(t_fmt *fmt, unsigned nblen,
+static int					pf_count_precision(t_fmt *fmt, unsigned nblen,
 														int64_t num, char sign)
 {
 	int						prec;
@@ -60,7 +60,7 @@ static int					count_precision(t_fmt *fmt, unsigned nblen,
 	return (prec);
 }
 
-static int					put_before(t_fmt *fmt, t_vec *buf, char sign)
+static int					pf_put_before(t_fmt *fmt, t_vec *buf, char sign)
 {
 	int						len;
 	char					p_form[2];
@@ -88,7 +88,7 @@ static int					put_before(t_fmt *fmt, t_vec *buf, char sign)
 	return (len);
 }
 
-static unsigned				print_num(t_fmt *fmt, t_vec *buf, t_num *params,
+static unsigned				pf_print_num(t_fmt *fmt, t_vec *buf, t_num *params,
 																	char *dig)
 {
 	char						p_form[2];
@@ -99,7 +99,7 @@ static unsigned				print_num(t_fmt *fmt, t_vec *buf, t_num *params,
 	if (fmt->flags & ZERO)
 		fmt->flags &= ~ZERO;
 	if (fmt->flags & CASE && ft_memcpy(p_form, "0X", 2))
-		apply_upcase(dig);
+		pf_apply_upcase(dig);
 	if (fmt->flags & SHARP && fmt->base != 10 && params->num != 0)
 	{
 		nblen--;
@@ -112,13 +112,13 @@ static unsigned				print_num(t_fmt *fmt, t_vec *buf, t_num *params,
 	}
 	if (params->sign && --nblen)
 		ft_vec_add(&buf, &params->sign);
-	nblen -= put_precision(fmt, buf, params, p_form[0]);
+	nblen -= pf_put_precision(fmt, buf, params, p_form[0]);
 	while (nblen--)
 		ft_vec_add(&buf, &*dig++);
 	return (params->nblen);
 }
 
-int							get_num(int64_t num, t_fmt *fmt,
+int							pf_get_num(int64_t num, t_fmt *fmt,
 														t_vec *buf, int sig)
 {
 	char					digits[60];
@@ -129,20 +129,20 @@ int							get_num(int64_t num, t_fmt *fmt,
 		return (0);
 	params->num = num;
 	params->nblen = (unsigned int)pf_itoa_base(num, digits, fmt->base, sig);
-	params->nblen += recount_nblen(fmt, num);
-	handle_negative(fmt, num);
-	if (!(params->sign = get_sign(fmt, buf, num, sig)) && fmt->base == 10)
+	params->nblen += pf_recount_nblen(fmt, num);
+	pf_handle_negative(fmt, num);
+	if (!(params->sign = pf_get_sign(fmt, buf, num, sig)) && fmt->base == 10)
 		params->nblen--;
-	params->prec = count_precision(fmt, params->nblen, num, params->sign);
+	params->prec = pf_count_precision(fmt, params->nblen, num, params->sign);
 	if (fmt->flags & LEFT)
-		params->nblen = print_num(fmt, buf, params, digits);
+		params->nblen = pf_print_num(fmt, buf, params, digits);
 	if (fmt->flags & ZERO && fmt->flags & SHARP)
-		params->nblen -= put_before(fmt, buf, params->sign);
+		params->nblen -= pf_put_before(fmt, buf, params->sign);
 	tmp = fmt->flags & ZERO ? '0' : ' ';
 	while ((unsigned)--fmt->width >= params->nblen && fmt->width > -1)
 		ft_vec_add(&buf, &tmp);
 	if (!(fmt->flags & LEFT))
-		print_num(fmt, buf, params, digits);
+		pf_print_num(fmt, buf, params, digits);
 	free(params);
 	return (0);
 }

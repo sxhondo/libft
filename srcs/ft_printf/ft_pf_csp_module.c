@@ -12,7 +12,7 @@
 
 #include "../incs/ft_printf.h"
 
-int						get_percent(t_fmt *fmt, t_vec *buf)
+int						pf_get_percent(t_fmt *fmt, t_vec *buf)
 {
 	char				tmp;
 	char				per;
@@ -28,7 +28,7 @@ int						get_percent(t_fmt *fmt, t_vec *buf)
 	return (0);
 }
 
-int						get_char(t_fmt *fmt, va_list args, t_vec *buf)
+int						pf_get_char(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	unsigned char		ch;
 	char				tmp;
@@ -53,7 +53,7 @@ int						get_char(t_fmt *fmt, va_list args, t_vec *buf)
 	return (0);
 }
 
-int						get_str(t_fmt *fmt, va_list args, t_vec *buf)
+int						pf_get_str(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	const char			zero[] = "(null)";
 	int					len;
@@ -80,7 +80,7 @@ int						get_str(t_fmt *fmt, va_list args, t_vec *buf)
 	return (0);
 }
 
-static void				put_in_buf(t_fmt *fmt, t_vec *buf, int hexlen,
+static void				pf_put_in_buf(t_fmt *fmt, t_vec *buf, int hexlen,
 																char hex[])
 {
 	char				*prefix;
@@ -99,7 +99,7 @@ static void				put_in_buf(t_fmt *fmt, t_vec *buf, int hexlen,
 		ft_vec_add(&buf, &*p++);
 }
 
-void					get_ptr(t_fmt *fmt, va_list args, t_vec *buf)
+void					pf_get_ptr(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	int					hexlen;
 	char				hex[15];
@@ -114,9 +114,9 @@ void					get_ptr(t_fmt *fmt, va_list args, t_vec *buf)
 	if (fmt->precision == 0 && !(ft_strcmp(hex, "0")) && ++prec)
 		ft_bzero(hex, 15);
 	if (fmt->flags & LEFT)
-		put_in_buf(fmt, buf, hexlen, hex);
+		pf_put_in_buf(fmt, buf, hexlen, hex);
 	while (--fmt->width > hexlen + 1 && fmt->width > -1)
 		ft_vec_add(&buf, &tmp);
 	if (!(fmt->flags & LEFT))
-		put_in_buf(fmt, buf, hexlen, hex);
+		pf_put_in_buf(fmt, buf, hexlen, hex);
 }

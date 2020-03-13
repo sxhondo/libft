@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_array.c                                   :+:      :+:    :+:   */
+/*   ft_free_2d_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 21:58:26 by sxhondo           #+#    #+#             */
-/*   Updated: 2020/01/22 21:58:27 by sxhondo          ###   ########.fr       */
+/*   Created: 2020/03/03 16:07:30 by sxhondo           #+#    #+#             */
+/*   Updated: 2020/03/03 16:07:32 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_printf.h"
 
-int			ft_print_array(const int *arr, int len)
+void		ft_free_2d_array(int **tab, size_t y)
 {
-	int		i;
+	size_t	yi;
 
-	if (arr == NULL || len == 0)
-		return (0);
-	i = 0;
-	while (i < len)
-	{
-		ft_printf("%d ", arr[i]);
-		i++;
-	}
-	return (1);
+	yi = -1;
+	while (++yi < y)
+		free(tab[yi]);
+	free(tab);
 }

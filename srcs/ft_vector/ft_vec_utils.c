@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_array.c                                     :+:      :+:    :+:   */
+/*   ft_vec_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 21:09:13 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/12/26 13:25:21 by sxhondo          ###   ########.fr       */
+/*   Created: 2020/03/02 16:52:57 by sxhondo           #+#    #+#             */
+/*   Updated: 2020/03/02 16:52:58 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			*ft_new_array(int size, int c)
+t_vec				*ft_vec_read(int fd)
 {
-	int		i;
-	int		*tab;
+	t_vec			*vec;
+	char			buf[1];
 
-	if (size <= 0 || !(tab = (int *)malloc(sizeof(int *) * size)))
-		return (0);
-	i = -1;
-	while (++i < size)
-		tab[i] = c;
-	return (tab);
+	if (!(vec = ft_vec_init(1, sizeof(char))))
+		return (NULL);
+	while (read(fd, buf, sizeof(buf)) > 0)
+		ft_vec_add(&vec, buf);
+	ft_vec_add(&vec, "\0");
+	if (!(ft_vec_resize(&vec)))
+	{
+		ft_vec_del(&vec);
+		return (NULL);
+	}
+	return (vec);
 }

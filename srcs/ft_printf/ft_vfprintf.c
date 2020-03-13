@@ -12,38 +12,39 @@
 
 #include "../incs/ft_printf.h"
 
-static void					print_module(t_fmt *fmt, va_list args, t_vec *buf)
+static void					pf_print_module(t_fmt *fmt, va_list args,
+																t_vec *buf)
 {
 	if (*fmt->iter == '%' || *fmt->iter == 'c' || *fmt->iter == 's'
 		|| *fmt->iter == 'p')
-		pcsp(fmt, args, buf);
+		pf_pcsp(fmt, args, buf);
 	else if (*fmt->iter == 'd' || *fmt->iter == 'i')
-		positive_negative_nums(fmt, args, buf);
+		pf_positive_negative_nums(fmt, args, buf);
 	else if (*fmt->iter == 'o' || *fmt->iter == 'u' || *fmt->iter == 'x'
 	|| *fmt->iter == 'X' || *fmt->iter == 'b')
-		positive_nums(fmt, args, buf);
+		pf_positive_nums(fmt, args, buf);
 	else if (*fmt->iter == 'f' || *fmt->iter == 'e' || *fmt->iter == 'E')
-		floats(fmt, args, buf);
+		pf_floats(fmt, args, buf);
 	else if (*fmt->iter == 'r')
-		print_non_printable(fmt, args, buf);
+		pf_print_non_printable(fmt, args, buf);
 }
 
-static void					parse_format_string(t_fmt *fmt, va_list args)
+static void					pf_parse_format_string(t_fmt *fmt, va_list args)
 {
-	fmt->flags = process_flags(fmt);
-	fmt->width = process_width(fmt, args);
-	fmt->precision = process_precision(fmt, args);
-	fmt->lmodifier = process_lmodifier(fmt);
-	fmt->base = process_base(fmt);
+	fmt->flags = pf_process_flags(fmt);
+	fmt->width = pf_process_width(fmt, args);
+	fmt->precision = pf_process_precision(fmt, args);
+	fmt->lmodifier = pf_process_lmodifier(fmt);
+	fmt->base = pf_process_base(fmt);
 }
 
-static int					write_in_buf(t_fmt *fmt, t_vec *buf)
+static int					pf_write_in_buf(t_fmt *fmt, t_vec *buf)
 {
 	while (*fmt->iter != '%' && *fmt->iter)
 	{
 		while (*fmt->iter == '{')
 		{
-			get_color(fmt, buf);
+			pf_get_color(fmt, buf);
 			if (*fmt->iter == '%')
 				return (0);
 		}
@@ -65,11 +66,11 @@ int							ft_vfprintf(int fd, const char *fmt, va_list args)
 	format->iter = fmt;
 	while (*format->iter)
 	{
-		write_in_buf(format, buf);
+		pf_write_in_buf(format, buf);
 		if (!*format->iter)
 			break ;
-		parse_format_string(format, args);
-		print_module(format, args, buf);
+		pf_parse_format_string(format, args);
+		pf_print_module(format, args, buf);
 	}
 	save = buf->total;
 	write(fd, buf->data, buf->total);

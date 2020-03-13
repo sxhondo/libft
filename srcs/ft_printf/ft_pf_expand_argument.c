@@ -12,20 +12,20 @@
 
 #include "../incs/ft_printf.h"
 
-void					pcsp(t_fmt *fmt, va_list args, t_vec *buf)
+void					pf_pcsp(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	if (*fmt->iter == '%')
-		get_percent(fmt, buf);
+		pf_get_percent(fmt, buf);
 	else if (*fmt->iter == 'c')
-		get_char(fmt, args, buf);
+		pf_get_char(fmt, args, buf);
 	else if (*fmt->iter == 's')
-		get_str(fmt, args, buf);
+		pf_get_str(fmt, args, buf);
 	else if (*fmt->iter == 'p')
-		get_ptr(fmt, args, buf);
+		pf_get_ptr(fmt, args, buf);
 	fmt->iter += 1;
 }
 
-void					positive_negative_nums(t_fmt *fmt, va_list args,
+void					pf_positive_negative_nums(t_fmt *fmt, va_list args,
 																	t_vec *buf)
 {
 	int64_t		num;
@@ -40,11 +40,11 @@ void					positive_negative_nums(t_fmt *fmt, va_list args,
 		num = va_arg(args, long long int);
 	else
 		num = va_arg(args, int);
-	get_num(num, fmt, buf, 1);
+	pf_get_num(num, fmt, buf, 1);
 	fmt->iter += 1;
 }
 
-void					positive_nums(t_fmt *fmt, va_list args, t_vec *buf)
+void					pf_positive_nums(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	uint64_t			num;
 
@@ -60,11 +60,11 @@ void					positive_nums(t_fmt *fmt, va_list args, t_vec *buf)
 		num = va_arg(args, unsigned long long);
 	else
 		num = va_arg(args, unsigned int);
-	get_num(num, fmt, buf, 0);
+	pf_get_num(num, fmt, buf, 0);
 	fmt->iter += 1;
 }
 
-void					floats(t_fmt *fmt, va_list args, t_vec *buf)
+void					pf_floats(t_fmt *fmt, va_list args, t_vec *buf)
 {
 	long double			dnum;
 
@@ -73,5 +73,5 @@ void					floats(t_fmt *fmt, va_list args, t_vec *buf)
 	else
 		dnum = (long double)va_arg(args, double);
 	fmt->flags |= (*fmt->iter == 'E' || *fmt->iter == 'G') ? CASE : 0;
-	get_dnum(dnum, fmt, buf);
+	pf_get_dnum(dnum, fmt, buf);
 }

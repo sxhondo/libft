@@ -60,22 +60,22 @@ typedef struct		s_fmt
 ** processings
 */
 
-int					process_precision(t_fmt *fmt, va_list args);
-int					process_width(t_fmt *fmt, va_list args);
-unsigned int		process_flags(t_fmt *fmt);
-unsigned int		process_lmodifier(t_fmt *fmt);
-unsigned int		process_base(t_fmt	*fmt);
+int					pf_process_precision(t_fmt *fmt, va_list args);
+int					pf_process_width(t_fmt *fmt, va_list args);
+unsigned int		pf_process_flags(t_fmt *fmt);
+unsigned int		pf_process_lmodifier(t_fmt *fmt);
+unsigned int		pf_process_base(t_fmt	*fmt);
 
 /*
 ** conversions
 */
 
-int					get_percent(t_fmt *fmt, t_vec *buf);
-int					get_str(t_fmt *fmt, va_list args, t_vec *buf);
-void				get_ptr(t_fmt *fmt, va_list args, t_vec *buf);
-int					get_char(t_fmt *fmt, va_list args, t_vec *buf);
-int					get_num(int64_t num, t_fmt *fmt, t_vec *buf, int sig);
-int					get_dnum(long double dnum, t_fmt *fmt, t_vec *buf);
+int					pf_get_percent(t_fmt *fmt, t_vec *buf);
+int					pf_get_str(t_fmt *fmt, va_list args, t_vec *buf);
+void				pf_get_ptr(t_fmt *fmt, va_list args, t_vec *buf);
+int					pf_get_char(t_fmt *fmt, va_list args, t_vec *buf);
+int					pf_get_num(int64_t num, t_fmt *fmt, t_vec *buf, int sig);
+int					pf_get_dnum(long double dnum, t_fmt *fmt, t_vec *buf);
 
 /*
 ** num - utilities
@@ -83,45 +83,45 @@ int					get_dnum(long double dnum, t_fmt *fmt, t_vec *buf);
 
 unsigned int		pf_itoa_base(uint64_t num, char s[], unsigned base,
 																	int sig);
-void				handle_negative(t_fmt *fmt, int64_t num);
-void				apply_upcase(char *tmp);
-char				get_sign(t_fmt *fmt, t_vec *buf, int64_t num, int sig);
-int					recount_nblen(t_fmt *fmt, int64_t num);
+void				pf_handle_negative(t_fmt *fmt, int64_t num);
+void				pf_apply_upcase(char *tmp);
+char				pf_get_sign(t_fmt *fmt, t_vec *buf, int64_t num, int sig);
+int					pf_recount_nblen(t_fmt *fmt, int64_t num);
 
 /*
 ** dnum - utilities
 */
 
-long double			roundd(long double dnum);
-char				get_dsign(long double dnum, t_fmt *fmt);
-int					put_zero(t_fmt *fmt, unsigned char *p);
-long double			get_exp(long double dnum, t_num *num);
-void				put_exp(char *exp, t_num *num);
+long double			pf_roundd(long double dnum);
+char				pf_get_dsign(long double dnum, t_fmt *fmt);
+int					pf_put_zero(t_fmt *fmt, unsigned char *p);
+long double			pf_get_exp(long double dnum, t_num *num);
+void				pf_put_exp(char *exp, t_num *num);
 
 /*
 ** expand argument
 */
 
-void				pcsp(t_fmt	*fmt, va_list args, t_vec *buf);
-void				positive_negative_nums(t_fmt *fmt, va_list args,
+void				pf_pcsp(t_fmt	*fmt, va_list args, t_vec *buf);
+void				pf_positive_negative_nums(t_fmt *fmt, va_list args,
 																t_vec *buf);
-void				positive_nums(t_fmt *fmt, va_list args, t_vec *buf);
-void				floats(t_fmt *fmt, va_list args, t_vec *buf);
+void				pf_positive_nums(t_fmt *fmt, va_list args, t_vec *buf);
+void				pf_floats(t_fmt *fmt, va_list args, t_vec *buf);
 
 /*
 ** process utilities
 */
 
-int					skip_atoi(const char *s);
-int					ft_isspecial(char ch);
+int					pf_skip_atoi(const char *s);
+int					pf_ft_isspecial(char ch);
 
 /*
 ** bonuses
 */
 
-void				print_non_printable(t_fmt *fmt, va_list args, t_vec *buf);
-void				get_color(t_fmt *fmt, t_vec *buf);
-void				put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
+void				pf_print_non_printable(t_fmt *fmt, va_list args, t_vec *buf);
+void				pf_get_color(t_fmt *fmt, t_vec *buf);
+void				pf_put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
 															unsigned lcpy);
 int					ft_printf(const char *format, ...);
 int					ft_fprintf(int fd, const char *restrict format, ...);

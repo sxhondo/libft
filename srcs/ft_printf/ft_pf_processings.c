@@ -12,12 +12,12 @@
 
 #include "../incs/ft_printf.h"
 
-unsigned		process_flags(t_fmt *fmt)
+unsigned		pf_process_flags(t_fmt *fmt)
 {
 	unsigned	flags;
 
 	flags = 0;
-	while (*fmt->iter++ && ft_isspecial(*fmt->iter))
+	while (*fmt->iter++ && pf_ft_isspecial(*fmt->iter))
 	{
 		if (*fmt->iter == '-' && (flags |= LEFT))
 			continue;
@@ -33,7 +33,7 @@ unsigned		process_flags(t_fmt *fmt)
 	return (flags);
 }
 
-int				process_width(t_fmt *fmt, va_list args)
+int				pf_process_width(t_fmt *fmt, va_list args)
 {
 	int			width;
 
@@ -46,13 +46,13 @@ int				process_width(t_fmt *fmt, va_list args)
 	}
 	if (ft_isdigit(*fmt->iter))
 	{
-		width = skip_atoi(fmt->iter);
+		width = pf_skip_atoi(fmt->iter);
 		fmt->iter += ft_nblen(width);
 	}
 	return (width);
 }
 
-int				process_precision(t_fmt *fmt, va_list args)
+int				pf_process_precision(t_fmt *fmt, va_list args)
 {
 	int			precision;
 
@@ -64,7 +64,7 @@ int				process_precision(t_fmt *fmt, va_list args)
 	}
 	if (ft_isdigit(*fmt->iter))
 	{
-		precision = skip_atoi(fmt->iter);
+		precision = pf_skip_atoi(fmt->iter);
 		fmt->iter += ft_nblen(precision);
 	}
 	else if (*fmt->iter == '*')
@@ -75,7 +75,7 @@ int				process_precision(t_fmt *fmt, va_list args)
 	return (precision);
 }
 
-unsigned		process_lmodifier(t_fmt *fmt)
+unsigned		pf_process_lmodifier(t_fmt *fmt)
 {
 	unsigned	lmodifier;
 
@@ -91,7 +91,7 @@ unsigned		process_lmodifier(t_fmt *fmt)
 	return (lmodifier);
 }
 
-unsigned		process_base(t_fmt *fmt)
+unsigned		pf_process_base(t_fmt *fmt)
 {
 	unsigned	base;
 

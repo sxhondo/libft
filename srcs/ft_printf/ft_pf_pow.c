@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-uint64_t				pow_of(int num, int pow)
+uint64_t				pf_pow_of(int num, int pow)
 {
 	uint64_t	res;
 

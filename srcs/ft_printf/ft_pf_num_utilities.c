@@ -41,7 +41,8 @@ unsigned int			pf_itoa_base(uint64_t num, char s[],
 	return ((unsigned int)(ptr - s));
 }
 
-char					get_sign(t_fmt *fmt, t_vec *buf, int64_t num, int sig)
+char					pf_get_sign(t_fmt *fmt, t_vec *buf,
+	int64_t num, int sig)
 {
 	char				sign;
 
@@ -62,7 +63,7 @@ char					get_sign(t_fmt *fmt, t_vec *buf, int64_t num, int sig)
 	return (sign);
 }
 
-int						recount_nblen(t_fmt *fmt, int64_t num)
+int						pf_recount_nblen(t_fmt *fmt, int64_t num)
 {
 	int					i;
 
@@ -78,7 +79,7 @@ int						recount_nblen(t_fmt *fmt, int64_t num)
 	return (i);
 }
 
-void					handle_negative(t_fmt *fmt, int64_t num)
+void					pf_handle_negative(t_fmt *fmt, int64_t num)
 {
 	if (fmt->width < -1 && num != 0)
 	{
@@ -87,7 +88,7 @@ void					handle_negative(t_fmt *fmt, int64_t num)
 	}
 }
 
-void					apply_upcase(char *tmp)
+void					pf_apply_upcase(char *tmp)
 {
 	while (*tmp)
 	{

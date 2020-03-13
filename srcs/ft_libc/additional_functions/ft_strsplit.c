@@ -84,6 +84,8 @@ char			**ft_strsplit(char const *s, char c)
 		{
 			while (*s && *s == c)
 				s++;
+			if (!*s)
+				break ;
 			if (!(ret[i] = get_word(s, c)))
 				return (free_previous(ret, i));
 			s += ft_strlen(ret[i]);

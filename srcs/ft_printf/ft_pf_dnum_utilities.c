@@ -12,7 +12,7 @@
 
 #include "../incs/ft_printf.h"
 
-long double						roundd(long double dnum)
+long double						pf_roundd(long double dnum)
 {
 	long double					tmp;
 
@@ -20,7 +20,7 @@ long double						roundd(long double dnum)
 	return (tmp / 100);
 }
 
-long double						get_exp(long double dnum, t_num *num)
+long double						pf_get_exp(long double dnum, t_num *num)
 {
 	long double					save;
 
@@ -40,7 +40,7 @@ long double						get_exp(long double dnum, t_num *num)
 	return (save);
 }
 
-char							get_dsign(long double dnum, t_fmt *fmt)
+char							pf_get_dsign(long double dnum, t_fmt *fmt)
 {
 	char						sign;
 
@@ -54,7 +54,7 @@ char							get_dsign(long double dnum, t_fmt *fmt)
 	return (sign);
 }
 
-int								put_zero(t_fmt *fmt, unsigned char *p)
+int								pf_put_zero(t_fmt *fmt, unsigned char *p)
 {
 	int							i;
 
@@ -68,7 +68,7 @@ int								put_zero(t_fmt *fmt, unsigned char *p)
 	return (i);
 }
 
-void							put_exp(char *exp, t_num *num)
+void							pf_put_exp(char *exp, t_num *num)
 {
 	char						tmp[99];
 	char						*p_tmp;

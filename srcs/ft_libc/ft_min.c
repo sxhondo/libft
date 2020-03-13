@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_new_ptr_array.c                                 :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/09 21:00:54 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/12/26 13:26:50 by sxhondo          ###   ########.fr       */
+/*   Created: 2020/03/04 16:27:08 by sxhondo           #+#    #+#             */
+/*   Updated: 2020/03/04 16:27:09 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void					**ft_new_ptr_array(int size)
+int		ft_min(int a, int b)
 {
-	int					i;
-	void				**tab;
-
-	if (size <= 0 || !(tab = (void **)malloc(sizeof(void *) * size)))
-		return (NULL);
-	i = -1;
-	while (++i < size)
-		tab[i] = NULL;
-	return (tab);
+	return (a < b ? a : b);
 }
