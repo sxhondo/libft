@@ -119,7 +119,8 @@ int					pf_ft_isspecial(char ch);
 ** bonuses
 */
 
-void				pf_print_non_printable(t_fmt *fmt, va_list args, t_vec *buf);
+void				pf_print_non_printable(t_fmt *fmt, va_list args,
+																t_vec *buf);
 void				pf_get_color(t_fmt *fmt, t_vec *buf);
 void				pf_put_nonp_in_buf(t_fmt *fmt, t_vec *buf, const char *str,
 															unsigned lcpy);

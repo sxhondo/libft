@@ -97,13 +97,14 @@ int					**ft_allocate_mx(int x, int y, int fill);
 int					*ft_new_array(int size, int c);
 int					ft_nblen(int nb);
 int					ft_atoi(const char *str);
+int					ft_atoi_base(const char *str, int32_t *res, unsigned base);
 char				*ft_itoa(int n);
 uint64_t			pow_of(int num, int pow);
 unsigned			ft_itoa_base(uint64_t num, char s[], unsigned base);
 int					ft_print_array(const int *arr, int len);
 char				**ft_strsplit(char const *s, char c);
-void 				ft_strsplit_free(char **tab);
-void 				ft_free_2d_array(int **tab, size_t y);
+void				ft_strsplit_free(char **tab);
+void				ft_free_2d_array(int **tab, size_t y);
 int					ft_min(int a, int b);
 int					ft_abs(int num);
 
