@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utilities.c                                        :+:      :+:    :+:   */
+/*   ft_pf_num_utilities.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sxhondo <w13cho@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 16:19:02 by sxhondo           #+#    #+#             */
-/*   Updated: 2019/09/15 16:19:06 by sxhondo          ###   ########.fr       */
+/*   Updated: 2020/04/11 23:21:53 by sxhondo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/ft_printf.h"
 
+/*
 unsigned int			pf_itoa_base(uint64_t num, char s[],
 														unsigned base, int sig)
 {
@@ -40,7 +41,7 @@ unsigned int			pf_itoa_base(uint64_t num, char s[],
 	ft_strrev(s);
 	return ((unsigned int)(ptr - s));
 }
-
+*/
 char					pf_get_sign(t_fmt *fmt, t_vec *buf,
 	int64_t num, int sig)
 {
